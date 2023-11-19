@@ -1,9 +1,9 @@
 {
-	"name" : "modal-feedback",
+	"name" : "drum-modal-feedback",
 	"version" : 1,
 	"creationdate" : 3781011549,
-	"modificationdate" : 3781011662,
-	"viewrect" : [ 25.0, 106.0, 955.0, 500.0 ],
+	"modificationdate" : 3783276600,
+	"viewrect" : [ 25.0, 106.0, 1408.0, 500.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -15,14 +15,20 @@
 				"local" : 1,
 				"toplevel" : 1
 			}
+,
+			"node-debug.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Desktop/drum-modal-feedback/patchers",
+					"projectrelativepath" : "./patchers"
+				}
+
+			}
 
 		}
 ,
 		"code" : 		{
-			"peaks.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
 
 		}
 ,

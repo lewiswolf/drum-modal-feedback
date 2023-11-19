@@ -1,1 +1,9 @@
+# nodejs
+code/dist
+node_modules
+
+# maxmsp
 externals
+
+# misc
+.DS_Store

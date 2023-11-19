@@ -1,0 +1,19 @@
+{
+	"name": "drum-modal-feedback",
+	"version": "1.0.0",
+	"author": "Lewis Wolstanholme & Jordie Shier",
+	"description": "Javascript API for dum-modal-feedback",
+	"main": "code/dist/index.js",
+	"source": "code/src/index.ts",
+	"dependencies": {
+		"@types/max-api": "^2.0.3",
+		"@types/node": "^20.9.2",
+		"prettier": "^3.1.0",
+		"typescript": "^5.2.2"
+	},
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"lint": "prettier --write --config ./.prettierrc ."
+	}
+}
