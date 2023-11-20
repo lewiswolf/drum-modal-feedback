@@ -64,7 +64,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 		threshold	minimum peak amplitude (db)
 	*/
 
-	const prev_amp = -200.0
+	let prev_amp = -200.0
 	peaks = []
 	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
@@ -79,6 +79,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 			) {
 				peaks.push(entry)
 			}
+			prev_amp = entry.amplitude
 		}
 	})
 	// sort peaks by amplitude
