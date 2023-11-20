@@ -106,8 +106,8 @@ maxmsp.addHandler(
 		params:
 			f_min	minimum frequency in range (hz, default 20)
 			f_max	maximum frequency in range (hz, default max in SPL_current)
-			
 		*/
+
 		peaks_subset = []
 		peaks.forEach((entry: SPL[0]): void => {
 			if (entry.frequency >= f_min && entry.frequency <= f_max) {
