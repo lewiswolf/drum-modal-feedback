@@ -19,7 +19,7 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 
 	const getN = (P: Readonly<SPL>): number[] => {
 		return N.map((n: Readonly<number>): [number, number] => {
-			if (n >= P.length && n < 0) {
+			if (n >= P.length || n < 0) {
 				maxmsp.post(`Mode number ${n} out of range.`)
 			}
 			return [P[n]?.frequency || 0, P[n]?.amplitude || 0]

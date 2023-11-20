@@ -41,12 +41,12 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-45",
-					"linecount" : 13,
+					"linecount" : 11,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 470.5, 67.0, 314.0, 181.0 ],
-					"text" : "TO ADD \n\n- Show errors from importJSON on the gui.\n\n- Update GUI with import JSON (A way of interfacing with the IIR buffer~ directly?)\n\nTO FIX\n\n- Buffer does not always show and hide on spectraldraw~ at the correct times.\n\n- Index out of range not correctly printing to console."
+					"patching_rect" : [ 470.5, 67.0, 316.0, 154.0 ],
+					"text" : "TO ADD \n\n- Show errors from importJSON on the gui.\n\n- Update GUI with import JSON (A way of interfacing with the IIR buffer~ directly?)\n\nTO FIX\n\n- Buffer does not always show and hide on spectraldraw~ at the correct times."
 				}
 
 			}
