@@ -32,11 +32,11 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 
 maxmsp.addHandler('setRange', (f_min: number = 0, f_max: number = Infinity): void => {
 	/*
-		Create a subset of dominant modes for use when calling getMode.
-		params:
-			f_min	minimum frequency in range (hz)
-			f_max	maximum frequency in range (hz)
-		*/
+	Create a subset of dominant modes for use when calling getMode.
+	params:
+		f_min	minimum frequency in range (hz)
+		f_max	maximum frequency in range (hz)
+	*/
 
 	peaks_subset = []
 	if (f_min > 20 || f_max < Math.max(...SPL_current.map((entry) => entry.frequency))) {
