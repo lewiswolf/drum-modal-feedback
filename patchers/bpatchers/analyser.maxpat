@@ -129,7 +129,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-47",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -342,7 +342,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1886.0, -118.0, 1852.0, 984.0 ],
+						"rect" : [ -1886.0, -118.0, 1435.0, 984.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -370,7 +370,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
@@ -629,11 +628,11 @@
 								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 518.0, 712.0, 140.0, 22.0 ],
-									"text" : "expr (5. * ($i1 - 1.)) + 20."
+									"patching_rect" : [ 518.0, 712.0, 212.0, 22.0 ],
+									"text" : "expr ($f2 * ($i1 - 1.)) + 20."
 								}
 
 							}
@@ -654,10 +653,10 @@
 									"id" : "obj-22",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 518.0, 518.0, 29.5, 22.0 ],
-									"text" : "t b f"
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "float" ],
+									"patching_rect" : [ 518.0, 510.0, 40.0, 22.0 ],
+									"text" : "t b f f"
 								}
 
 							}
@@ -840,7 +839,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 423.0, 232.0, 30.0, 30.0 ]
 								}
 
@@ -995,8 +994,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-23", 1 ],
+									"midpoints" : [ 548.5, 539.5, 720.5, 539.5 ],
+									"source" : [ "obj-22", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
-									"midpoints" : [ 527.5, 547.5, 648.0, 547.5 ],
+									"midpoints" : [ 527.5, 548.5, 648.0, 548.5 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -1259,7 +1266,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1886.0, 74.0, 1852.0, 984.0 ],
+						"rect" : [ -1886.0, -118.0, 1852.0, 984.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1291,11 +1298,10 @@
 								"box" : 								{
 									"color" : [ 0.862745098039216, 0.392156862745098, 0.356862745098039, 1.0 ],
 									"id" : "obj-9",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 348.0, 324.636363636363569, 74.0, 22.0 ],
+									"patching_rect" : [ 348.0, 324.636363636363569, 79.0, 22.0 ],
 									"text" : "s #0buffer"
 								}
 
@@ -1650,6 +1656,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -1661,7 +1669,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1742,7 +1750,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1776,11 +1784,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-88",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 402.0, 78.0, 30.0, 30.0 ]
 				}
 
@@ -2071,7 +2079,28 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "index.js",
+				"bootpath" : "~/Desktop/drum-modal-feedback/code/dist",
+				"patcherrelativepath" : "../../code/dist",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "irmeasure~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "irvalue~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "spectrumdraw~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
