@@ -12,6 +12,7 @@ npm run build
 
 ### Dependencies
 
+-   [HISSTools Impulse Response Toolbox](https://github.com/HISSTools/HISSTools_Impulse_Response_Toolbox)
 -   [NodeJS](https://formulae.brew.sh/formula/node)
 
 # Usage
