@@ -30,7 +30,7 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
 })
 
-maxmsp.addHandler('setRange', (f_min: number = 0, f_max: number = Infinity): void => {
+maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity): void => {
 	/*
 	Create a subset of dominant modes for use when calling getMode.
 	params:
@@ -39,7 +39,10 @@ maxmsp.addHandler('setRange', (f_min: number = 0, f_max: number = Infinity): voi
 	*/
 
 	peaks_subset = []
-	if (f_min > 20 || f_max < Math.max(...SPL_current.map((entry) => entry.frequency))) {
+	if (
+		f_min > 20 ||
+		f_max < Math.max(...SPL_current.map((entry: Readonly<SPL[0]>): number => entry.frequency))
+	) {
 		peaks.forEach((entry: SPL[0]): void => {
 			if (entry.frequency >= f_min && entry.frequency <= f_max) {
 				peaks_subset.push(entry)
@@ -110,17 +113,14 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	})
 })
 
-maxmsp.addHandler(
-	'__importSweep',
-	(frequency: Readonly<number>, amplitude: Readonly<number>): void => {
-		/*
-		Load the Javascript API with the results of an SPL test, one frequency and amplitude pair at a time.
-		The Javascript API is reset when a new value for 20hz is received.
-		*/
+maxmsp.addHandler('__importSweep', (frequency: Readonly<number>, amplitude: Readonly<number>): void => {
+	/*
+	Load the Javascript API with the results of an SPL test, one frequency and amplitude pair at a time.
+	The Javascript API is reset when a new value for 20hz is received.
+	*/
 
-		if (frequency === 20) {
-			SPL_current = []
-		}
-		SPL_current.push({ frequency, amplitude })
-	},
-)
+	if (frequency === 20) {
+		SPL_current = []
+	}
+	SPL_current.push({ frequency, amplitude })
+})
