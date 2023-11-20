@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 134.0, 887.0, 472.0 ],
+		"rect" : [ 59.0, 134.0, 1340.0, 472.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1269,8 +1269,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 372.5, 815.0, 52.0, 22.0 ],
-					"text" : "dac~ 35"
+					"patching_rect" : [ 372.5, 815.0, 64.0, 22.0 ],
+					"text" : "mc.dac~ 1"
 				}
 
 			}
@@ -1324,8 +1324,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
