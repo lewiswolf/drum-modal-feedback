@@ -8,7 +8,52 @@ let SPL_current: SPL = [] // the results of an SPL test, organised according to 
 let peaks: SPL = [] // subset of freqs and sweeps ((hz, db))
 let peaks_subset: SPL = [] // a second subset for applying frequency range limiting
 
-maxmsp.addHandler('analyseSweep', (threshold: Readonly<number> = -40): void => {
+//	//	//	//	//	//
+// PUBLIC METHODS 	//
+//	//	//	//	//	//
+
+maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
+	/*
+	Get the nth most dominant mode of a precomputed SPL.
+	*/
+
+	maxmsp.outlet(
+		N.map((n: Readonly<number>): [number, number] => {
+			if (n >= peaks_subset.length && n < 0) {
+				maxmsp.post(`Mode number ${n} out of range.`)
+			}
+			return [peaks_subset[n]?.frequency || 0, peaks_subset[n]?.amplitude || 0]
+		}).flat(),
+	)
+})
+
+maxmsp.addHandler(
+	'setRange',
+	(
+		f_min: number = 20,
+		f_max: number = Math.max(...SPL_current.map((entry) => entry.frequency)),
+	): void => {
+		/*
+		Create a subset of dominant modes for use when calling getMode.
+		params:
+			f_min	minimum frequency in range (hz, default 20)
+			f_max	maximum frequency in range (hz, default max in SPL_current)
+		*/
+
+		peaks_subset = []
+		peaks.forEach((entry: SPL[0]): void => {
+			if (entry.frequency >= f_min && entry.frequency <= f_max) {
+				peaks_subset.push(entry)
+			}
+		})
+	},
+)
+
+//	//	//	//	//	//
+// PRIVATE METHODS 	//
+//	//	//	//	//	//
+
+maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void => {
 	/*
 	Detect the dominant modes in an SPL test using the ___ algorithm.
 		See: <link.to.Julius.Caesar.Smith.III>
@@ -38,7 +83,7 @@ maxmsp.addHandler('analyseSweep', (threshold: Readonly<number> = -40): void => {
 	maxmsp.outletBang()
 })
 
-maxmsp.addHandler('exportJSON', (absolute_path: Readonly<string>): void => {
+maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
 	/*
 	Export the current SPL as a JSON file.
 	*/
@@ -50,22 +95,7 @@ maxmsp.addHandler('exportJSON', (absolute_path: Readonly<string>): void => {
 	maxmsp.outletBang()
 })
 
-maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
-	/*
-	Get the nth most dominant mode of a precomputed SPL.
-	*/
-
-	maxmsp.outlet(
-		N.map((n: Readonly<number>): [number, number] => {
-			if (n >= peaks_subset.length && n < 0) {
-				maxmsp.post(`Mode number ${n} out of range.`)
-			}
-			return [peaks_subset[n]?.frequency || 0, peaks_subset[n]?.amplitude || 0]
-		}).flat(),
-	)
-})
-
-maxmsp.addHandler('importJSON', (absolute_path: Readonly<string>): void => {
+maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	/*
 	Import an SPL from a JSON file.
 	*/
@@ -81,7 +111,7 @@ maxmsp.addHandler('importJSON', (absolute_path: Readonly<string>): void => {
 })
 
 maxmsp.addHandler(
-	'importSweep',
+	'__importSweep',
 	(frequency: Readonly<number>, amplitude: Readonly<number>): void => {
 		/*
 		Load the Javascript API with the results of an SPL test, one frequency and amplitude pair at a time.
@@ -92,27 +122,5 @@ maxmsp.addHandler(
 			SPL_current = []
 		}
 		SPL_current.push({ frequency, amplitude })
-	},
-)
-
-maxmsp.addHandler(
-	'setRange',
-	(
-		f_min: number = 20,
-		f_max: number = Math.max(...SPL_current.map((entry) => entry.frequency)),
-	): void => {
-		/*
-		Create a subset of dominant modes for use when calling getMode.
-		params:
-			f_min	minimum frequency in range (hz, default 20)
-			f_max	maximum frequency in range (hz, default max in SPL_current)
-		*/
-
-		peaks_subset = []
-		peaks.forEach((entry: SPL[0]): void => {
-			if (entry.frequency >= f_min && entry.frequency <= f_max) {
-				peaks_subset.push(entry)
-			}
-		})
 	},
 )

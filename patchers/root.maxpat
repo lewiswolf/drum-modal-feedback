@@ -41,12 +41,12 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-45",
-					"linecount" : 11,
+					"linecount" : 15,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 469.5, 63.0, 255.0, 154.0 ],
-					"text" : "TO ADD \n\n- show errors from importJSON on the gui\n\n- update GUI when import JSON (A way of interfacing with the IIR buffer~ directly?)\n\n- delineate between private methods (methods used only by NodeJS in this patcher <<<) and public methods (methods exposed to other Max patches)"
+					"patching_rect" : [ 470.5, 67.0, 314.0, 208.0 ],
+					"text" : "TO ADD \n\n- Show errors from importJSON on the gui.\n\n- Update GUI with import JSON (A way of interfacing with the IIR buffer~ directly?)\n\nTO FIX\n\n- Buffer does not always show and hide on spectraldraw~ at the correct times.\n\n- Index out of range not correctly printing to console.\n\n- Improve memory efficiency for peaks_subset."
 				}
 
 			}
@@ -69,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 435.441178560256958, 398.0, 42.0, 22.0 ],
+					"patching_rect" : [ 412.441178560256958, 397.0, 42.0, 22.0 ],
 					"text" : "output"
 				}
 
@@ -90,7 +90,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "int" ],
-					"patching_rect" : [ 45.441178560256958, 63.0, 409.0, 312.0 ],
+					"patching_rect" : [ 45.441178560256958, 67.0, 409.0, 312.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 12.382356882095337, 4.852941274642944, 415.0, 310.0 ],
 					"viewvisibility" : 1
@@ -671,7 +671,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-41", 0 ],
+					"destination" : [ "obj-41", 1 ],
 					"source" : [ "obj-89", 1 ]
 				}
 
