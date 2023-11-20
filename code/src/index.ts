@@ -17,14 +17,17 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	Get the nth most dominant mode of a precomputed SPL.
 	*/
 
-	maxmsp.outlet(
-		N.map((n: Readonly<number>): [number, number] => {
-			if (n >= peaks_subset.length && n < 0) {
+	const getN = (P: Readonly<SPL>): number[] => {
+		return N.map((n: Readonly<number>): [number, number] => {
+			if (n >= P.length && n < 0) {
 				maxmsp.post(`Mode number ${n} out of range.`)
 			}
-			return [peaks_subset[n]?.frequency || 0, peaks_subset[n]?.amplitude || 0]
-		}).flat(),
-	)
+			return [P[n]?.frequency || 0, P[n]?.amplitude || 0]
+		}).flat()
+	}
+	// to save memory, we declare the function prior and call it using
+	// peaks_subset if it is populated, or peaks if it is not.
+	maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
 })
 
 maxmsp.addHandler(
@@ -62,6 +65,8 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	*/
 
 	const prev_amp = -200.0
+	peaks = []
+	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
 		if (i !== SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
@@ -78,8 +83,6 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	})
 	// sort peaks by amplitude
 	peaks.sort((a, b) => b.amplitude - a.amplitude)
-	// analysing a sweep always resets the frequency range set with setRange.
-	peaks_subset = peaks
 	maxmsp.outletBang()
 })
 

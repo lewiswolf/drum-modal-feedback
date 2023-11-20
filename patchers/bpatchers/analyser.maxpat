@@ -129,7 +129,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-47",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -300,7 +300,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 592.0, 395.0, 77.0, 22.0 ],
+					"patching_rect" : [ 607.0, 395.0, 77.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -342,7 +342,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1886.0, -118.0, 1435.0, 984.0 ],
+						"rect" : [ -1886.0, -118.0, 1852.0, 984.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -839,7 +839,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 423.0, 232.0, 30.0, 30.0 ]
 								}
 
@@ -1579,7 +1579,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 462.0, 394.0, 77.0, 22.0 ],
+					"patching_rect" : [ 477.0, 394.0, 77.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1599,7 +1599,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 592.0, 366.0, 100.0, 20.0 ],
+					"patching_rect" : [ 607.0, 366.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 209.0, 207.0, 195.0, 27.0 ],
 					"text" : "Export JSON"
@@ -1614,7 +1614,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 462.0, 366.0, 100.0, 20.0 ],
+					"patching_rect" : [ 477.0, 366.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 207.0, 194.5, 27.0 ],
 					"text" : "Import JSON"
@@ -1656,8 +1656,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -1669,7 +1667,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1750,7 +1748,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1784,11 +1782,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-88",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 402.0, 78.0, 30.0, 30.0 ]
 				}
 
@@ -1832,7 +1830,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 699.5, 96.0, 108.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 237.5, 7.0, 108.0, 20.0 ],
+					"presentation_rect" : [ 209.0, 7.0, 108.0, 20.0 ],
 					"text" : "Frequency Interval"
 				}
 
@@ -1850,7 +1848,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 717.0, 189.0, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 354.0, 6.0, 50.0, 22.0 ]
+					"presentation_rect" : [ 324.0, 6.0, 80.0, 22.0 ]
 				}
 
 			}
@@ -2079,28 +2077,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "index.js",
-				"bootpath" : "~/Desktop/drum-modal-feedback/code/dist",
-				"patcherrelativepath" : "../../code/dist",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "irmeasure~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "irvalue~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "spectrumdraw~.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
