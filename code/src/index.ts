@@ -67,7 +67,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	peaks = []
 	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
-		if (i !== SPL_current.length - 1) {
+		if (i < SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
 			const next_amp = (SPL_current[i + 1] as NonNullable<SPL[0]>).amplitude
 			// logic
