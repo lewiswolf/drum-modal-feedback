@@ -64,23 +64,44 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	*/
 
 	let prev_amp = -Infinity
+	let prev_freq = 0.0
 	peaks = []
 	peaks_subset = []
+
+	// TODO: will this always assign the first entry as a peak? Should we instead
+	// start at i = 1?
+	// https://github.com/lewiswolf/drum-modal-feedback/issues/11
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
 		if (i !== SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
 			const next_amp = (SPL_current[i + 1] as NonNullable<SPL[0]>).amplitude
+			const next_freq = (SPL_current[i + 1] as NonNullable<SPL[0]>).frequency
 			// logic
 			if (
 				entry.amplitude > prev_amp &&
 				entry.amplitude > next_amp &&
 				(threshold === 0 || entry.amplitude > threshold)
 			) {
-				peaks.push(entry)
+				// Perform parabolic interpolation to better approximate the peak
+				// First calculate the frequency bin of the peak (-1.0 to 1.0)
+				// https://ccrma.stanford.edu/~jos/sasp/Peak_Detection_Steps_3.html
+				let freq = 0.5 * (prev_amp - next_amp)
+				freq = freq / (prev_amp - 2.0 * entry.amplitude + next_amp)
+
+				// Perform inerpolation of the amplitude
+				let amp = entry.amplitude - 0.25 * (prev_amp - next_amp) * freq
+
+				// Now convert the frequency bin to a frequency in hz
+				freq = entry.frequency + 0.5 * freq * (next_freq - prev_freq)
+
+				// Push the interpolated peak to the peaks array
+				peaks.push({ frequency: freq, amplitude: amp })
 			}
 			prev_amp = entry.amplitude
+			prev_freq = entry.frequency
 		}
 	})
+
 	// sort peaks by amplitude
 	peaks.sort((a, b) => b.amplitude - a.amplitude)
 	maxmsp.outletBang()
