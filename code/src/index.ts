@@ -58,27 +58,36 @@ maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<numb
 maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void => {
 	/*
 	Detect the dominant modes in an SPL test using the ___ algorithm.
-		See: <link.to.Julius.Caesar.Smith.III>
+		See: https://ccrma.stanford.edu/~jos/sasp/Peak_Detection_Steps_3.html
 	params:
 		threshold	minimum peak amplitude (db)
 	*/
 
-	let prev_amp = -Infinity
 	peaks = []
 	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
-		if (i !== SPL_current.length - 1) {
+		if (i > 1 && i < SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
-			const next_amp = (SPL_current[i + 1] as NonNullable<SPL[0]>).amplitude
+			const prev_entry = SPL_current[i - 1] as NonNullable<SPL[0]>
+			const next_entry = SPL_current[i + 1] as NonNullable<SPL[0]>
 			// logic
 			if (
-				entry.amplitude > prev_amp &&
-				entry.amplitude > next_amp &&
+				entry.amplitude > prev_entry.amplitude &&
+				entry.amplitude > next_entry.amplitude &&
 				(threshold === 0 || entry.amplitude > threshold)
 			) {
-				peaks.push(entry)
+				// Perform parabolic interpolation to better approximate the peak
+				// First calculate the frequency bin of the peak (-1.0 to 1.0)
+				const bin =
+					(0.5 * (prev_entry.amplitude - next_entry.amplitude)) /
+					(prev_entry.amplitude - 2.0 * entry.amplitude + next_entry.amplitude)
+				peaks.push({
+					// Convert the frequency bin to a frequency in hz
+					frequency: entry.frequency + 0.5 * (next_entry.frequency - prev_entry.frequency) * bin,
+					// Perform interpolation of the amplitude
+					amplitude: entry.amplitude - 0.25 * (prev_entry.amplitude - next_entry.amplitude) * bin,
+				})
 			}
-			prev_amp = entry.amplitude
 		}
 	})
 	// sort peaks by amplitude
