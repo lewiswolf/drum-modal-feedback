@@ -17,17 +17,21 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	Get the nth most dominant mode of a precomputed SPL.
 	*/
 
-	const getN = (P: Readonly<SPL>): number[] => {
-		return N.map((n: Readonly<number>): [number, number] => {
-			if (n >= P.length || n < 0) {
-				maxmsp.post(`Mode number ${n} out of range.`)
-			}
-			return [P[n]?.frequency || 0, P[n]?.amplitude || 0]
-		}).flat()
+	if (N.length > 64) {
+		maxmsp.post('Only 64 modes can be queried at once.')
+	} else {
+		const getN = (P: Readonly<SPL>): number[] => {
+			return N.map((n: Readonly<number>): [number, number] => {
+				if (n >= P.length || n < 0) {
+					maxmsp.post(`Mode number ${n} out of range.`)
+				}
+				return [P[n]?.frequency || 0, P[n]?.amplitude || 0]
+			}).flat()
+		}
+		// to save memory, we declare the function prior and call it using
+		// peaks_subset if it is populated, or peaks if it is not.
+		maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
 	}
-	// to save memory, we declare the function prior and call it using
-	// peaks_subset if it is populated, or peaks if it is not.
-	maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
 })
 
 maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity): void => {
