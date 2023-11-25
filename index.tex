@@ -1,0 +1,75 @@
+\documentclass{style/nime-alternate}
+\usepackage{style/anonymize} % Uncomment this line to publish
+
+\begin{document}
+
+	%	% 	%	%	%	%
+	% Preamble			%
+	%	% 	%	%	%	%
+
+	\conferenceinfo{NIME'24,}{4--6 September, Utrecht, The Netherlands.}
+	\title{NIME Proceedings Template for LaTeX}
+	\label{key}
+	\numberofauthors{3}
+	\author{
+		% 1st. author
+		\alignauthor
+		\anonymize{Lewis Wolstanholme}\\
+		\affaddr{\anonymize{Centre for Digital Music}}\\
+		\affaddr{\anonymize{Queen Mary University of London}}\\
+		\affaddr{\anonymize{United Kingdom}}\\
+		\email{\anonymize{l.wolstanholme@qmul.ac.uk}}
+		% 2nd. author
+		\alignauthor
+		\anonymize{Jordie Shier}\\
+		\affaddr{\anonymize{Centre for Digital Music}}\\
+		\affaddr{\anonymize{Queen Mary University of London}}\\
+		\affaddr{\anonymize{United Kingdom}}\\
+		\email{\anonymize{j.m.shier@qmul.ac.uk}}
+		% 3rd. author
+		\alignauthor
+		\anonymize{Andrew McPherson}\\
+		\affaddr{\anonymize{Dyson School of Design Engineering}}\\
+		\affaddr{\anonymize{Imperial College London}}\\
+		\affaddr{\anonymize{United Kingdom}}\\
+		\email{\anonymize{andrew.mcpherson@imperial.ac.uk}}
+	}
+	\maketitle
+
+	%	% 	%	%	%	%
+	% Abstract			%
+	%	% 	%	%	%	%
+
+	\begin{abstract}
+		\dots
+	\end{abstract}
+	% http://dl.acm.org/ccs_flat.cfm
+	\keywords{NIME, proceedings, \LaTeX, template}
+	\ccsdesc[500]{Applied computing~Sound and music computing}
+	\ccsdesc[100]{Applied computing~Performing arts}
+	\ccsdesc[300]{Information systems~Music retrieval}
+	\printccsdesc
+
+	%	% 	%	%	%	%
+	% Body				%
+	%	% 	%	%	%	%
+
+	\input{./src/document.tex}
+
+	%	% 	%	%	%	%
+	% Acknowledgements	%
+	%	% 	%	%	%	%
+
+	\section{Acknowledgements}
+	This work is supported by the Centre for Doctoral Training in Artificial Intelligence and Music at Queen Mary University of London, funded by UK Research and Innovation (UKRI) under EPSRC grant EP/S022694/1.
+
+	\section{Ethical Standards}
+	\dots
+
+	%	% 	%	%	%	%
+	% Bibliography		%
+	%	% 	%	%	%	%
+
+	\bibliographystyle{abbrv}
+	\bibliography{./src/bib.bib}
+\end{document}

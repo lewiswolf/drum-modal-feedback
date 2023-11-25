@@ -1,0 +1,69 @@
+{
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"latex-workshop.bibtex-format.tab": "tab",
+	"latex-workshop.latex.autoBuild.run": "onSave",
+	"latex-workshop.latex.autoClean.run": "onBuilt",
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"*/*.aux",
+		"*.bbl",
+		"*.blg",
+		"*.fdb_latexmk",
+		"*.fls",
+		"*.lof",
+		"*.log",
+		"*.out",
+		"*.synctex(busy)",
+		"*.synctex.gz",
+		"*.synctex.gz(busy)",
+		"*.toc"
+	],
+	"latex-workshop.latex.clean.method": "glob",
+	"latex-workshop.latex.tools": [
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"--shell-escape",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"-outdir=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": [
+				"--shell-escape",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			],
+			"env": {}
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": ["%DOCFILE%"],
+			"env": {}
+		},
+	],
+	"latex-workshop.linting.chktex.enabled": false,
+	"latex-workshop.view.pdf.viewer": "tab",
+	"cSpell.enabledLanguageIds": ["latex", "markdown"],
+	// add extra languages globally
+	"cSpell.language": "en-GB",
+	"cSpell.overrides": [
+		// add extra languages per file
+        // {
+        //     "filename": "**/src/...",
+        //     "language": "en-GB, de-DE, es-ES"
+        // },
+    ]
+}
