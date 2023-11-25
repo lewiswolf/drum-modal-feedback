@@ -1,5 +1,3 @@
-# personal-latex-template
-
 # Dependencies
 
 - [MacTex](https://formulae.brew.sh/cask/mactex-no-gui)
