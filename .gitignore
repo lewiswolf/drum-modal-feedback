@@ -6,5 +6,6 @@ node_modules
 externals
 
 # misc
+*.pdf
 .DS_Store
 unused

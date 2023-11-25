@@ -7,7 +7,7 @@
 	"source": "code/src/index.ts",
 	"dependencies": {
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^20.9.4",
+		"@types/node": "^20.10.0",
 		"prettier": "^3.1.0",
 		"typescript": "^5.3.2"
 	},
