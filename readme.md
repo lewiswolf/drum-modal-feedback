@@ -25,5 +25,6 @@ The NodeJS part of the patch is in `code/src`. For development, use `node-debug.
 
 ```bash
 npm run dev # npm run build with --watch flag
-npm run lint # lint the project
+npm run test # test the project with eslint
+npm run lint # format the project
 ```
