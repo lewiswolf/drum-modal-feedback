@@ -1,7 +1,7 @@
 // dependencies
 import * as fs from 'fs'
 import * as path from 'path'
-const maxmsp = require('max-api')
+import { default as maxmsp } from 'max-api'
 
 // globals
 let SPL_current: SPL = [] // the results of an SPL test, organised according to ((hz, db))
@@ -18,19 +18,19 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	*/
 
 	if (N.length > 64) {
-		maxmsp.post('Only 64 modes can be queried at once.')
+		void maxmsp.post('Only 64 modes can be queried at once.')
 	} else {
 		const getN = (P: Readonly<SPL>): number[] => {
 			return N.map((n: Readonly<number>): [number, number] => {
 				if (n >= P.length || n < 0) {
-					maxmsp.post(`Mode number ${n} out of range.`)
+					void maxmsp.post(`Mode number ${n} out of range.`)
 				}
 				return [P[n]?.frequency || 0, P[n]?.amplitude || 0]
 			}).flat()
 		}
 		// to save memory, we declare the function prior and call it using
 		// peaks_subset if it is populated, or peaks if it is not.
-		maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
+		void maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
 	}
 })
 
@@ -96,7 +96,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	})
 	// sort peaks by amplitude
 	peaks.sort((a, b) => b.amplitude - a.amplitude)
-	maxmsp.outletBang()
+	void maxmsp.outletBang()
 })
 
 maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
@@ -108,7 +108,7 @@ maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
 		`${absolute_path}${path.extname(absolute_path) !== '.json' ? '.json' : ''}`,
 		JSON.stringify(SPL_current),
 	)
-	maxmsp.outletBang()
+	void maxmsp.outletBang()
 })
 
 maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
@@ -119,9 +119,9 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	fs.readFile(absolute_path, (err, data) => {
 		if (!err) {
 			SPL_current = JSON.parse(data.toString())
-			maxmsp.outletBang()
+			void maxmsp.outletBang()
 		} else {
-			maxmsp.post('JSON could not be imported.')
+			void maxmsp.post('JSON could not be imported.')
 		}
 	})
 })
