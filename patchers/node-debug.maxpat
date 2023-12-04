@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 565.5, 120.0, 75.0, 22.0 ],
+					"text" : "getMode 0 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -57,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.5, 40.0, 138.5, 116.0 ],
+					"patching_rect" : [ 648.5, 40.0, 139.0, 116.0 ],
 					"text" : "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, setRange 20 30, getMode 0"
 				}
 
@@ -407,7 +419,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.5, 167.5, 138.5, 102.0 ],
+					"patching_rect" : [ 648.5, 167.5, 139.0, 102.0 ],
 					"text" : "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, getMode 0 1"
 				}
 
@@ -420,7 +432,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 134.0, 67.0, 136.0, 76.0 ],
+					"patching_rect" : [ 134.0, 67.0, 139.0, 76.0 ],
 					"text" : "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40"
 				}
 
@@ -428,12 +440,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-8",
+					"linecount" : 4,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 368.0, 67.0, 22.0 ],
-					"text" : "25 -30"
+					"patching_rect" : [ 64.0, 368.0, 67.0, 62.0 ],
+					"text" : "Node child process quit, will restart"
 				}
 
 			}
@@ -517,6 +530,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
@@ -550,6 +565,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}

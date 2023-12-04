@@ -1,7 +1,7 @@
 // dependencies
 import * as fs from 'fs'
 import * as path from 'path'
-import { default as maxmsp } from 'max-api'
+const maxmsp = require('max-api')
 
 // globals
 let SPL_current: SPL = [] // the results of an SPL test, organised according to ((hz, db))
@@ -70,7 +70,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	peaks = []
 	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
-		if (i > 1 && i < SPL_current.length - 1) {
+		if (i > 0 && i < SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
 			const prev_entry = SPL_current[i - 1] as NonNullable<SPL[0]>
 			const next_entry = SPL_current[i + 1] as NonNullable<SPL[0]>
@@ -113,17 +113,24 @@ maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
 
 maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	/*
-	Import an SPL from a JSON file.
+	Safely import an SPL from a JSON file.
 	*/
 
-	fs.readFile(absolute_path, (err, data) => {
-		if (!err) {
-			SPL_current = JSON.parse(data.toString())
-			void maxmsp.outletBang()
-		} else {
-			void maxmsp.post('JSON could not be imported.')
+	try {
+		const json = JSON.parse(fs.readFileSync(absolute_path, 'utf-8').toString()) as SPL
+		if (
+			!(json instanceof Array) ||
+			json.every(
+				(entry: { amplitude: number | undefined; frequency: number | undefined } | undefined) =>
+					entry === undefined || entry.amplitude === undefined || entry.frequency === undefined,
+			)
+		) {
+			throw new Error('Parsed JSON does not match expected format.')
 		}
-	})
+		SPL_current = json
+	} catch (err) {
+		err instanceof Error && void maxmsp.post(`JSON could not be imported: ${err.message}`)
+	}
 })
 
 maxmsp.addHandler('__importSweep', (frequency: Readonly<number>, amplitude: Readonly<number>): void => {

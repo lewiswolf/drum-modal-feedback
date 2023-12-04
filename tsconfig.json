@@ -28,5 +28,6 @@
 		"outDir": "./code/dist",
 		"baseUrl": "./code/src",
 		"lib": ["es5"]
-	}
+	},
+	"include": ["code/src"]
 }
