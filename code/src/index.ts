@@ -1,7 +1,7 @@
 // dependencies
 import * as fs from 'fs'
 import * as path from 'path'
-const maxmsp = require('max-api')
+import { default as maxmsp } from 'max-api'
 
 // globals
 let SPL_current: SPL = [] // the results of an SPL test, organised according to ((hz, db))
