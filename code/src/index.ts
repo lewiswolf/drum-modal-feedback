@@ -34,6 +34,29 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	}
 })
 
+maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
+	/*
+	Sets the minimum distance in frequency between modes. This algorithm uses a greedy search to find the
+	loudest modes, and then discards those that are within the specified frequency range.
+	*/
+
+	const clusterLogic = (S1: Readonly<SPL>, S2: SPL): void => {
+		// S2 is mutated __in place__
+		S1.forEach((entry: Readonly<SPL[0]>) => {
+			S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
+				return Math.abs(entry.frequency - entry_subset.frequency) < threshold
+			}) && S2.push(entry)
+		})
+	}
+	if (peaks_subset.length === 0) {
+		clusterLogic(peaks, peaks_subset)
+	} else {
+		const new_subset: SPL = []
+		clusterLogic(peaks_subset, new_subset)
+		peaks_subset = new_subset
+	}
+})
+
 maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity): void => {
 	/*
 	Create a subset of dominant modes for use when calling getMode.
