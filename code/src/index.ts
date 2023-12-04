@@ -128,6 +128,7 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 			throw new Error('Parsed JSON does not match expected format.')
 		}
 		SPL_current = json
+		void maxmsp.outletBang()
 	} catch (err) {
 		err instanceof Error && void maxmsp.post(`JSON could not be imported: ${err.message}`)
 	}
