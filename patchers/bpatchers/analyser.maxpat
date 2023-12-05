@@ -40,6 +40,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 512.5, 603.0, 216.0, 20.0 ],
+					"text" : "TO ADD: Show node errors on the GUI"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-71",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -130,7 +141,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
@@ -2298,6 +2308,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -2378,7 +2390,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 262.25, 400.0, 27.0 ],
 					"style" : "default",
-					"text" : "",
+					"text" : "Analysing Sweep",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Ready",
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
