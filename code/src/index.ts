@@ -50,14 +50,14 @@ maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
 			}) && S2.push(entry)
 		})
 	}
-	if (peaks_subset.length === 0) {
-		if (threshold !== 0) {
+	if (threshold !== 0) {
+		if (peaks_subset.length === 0) {
 			clusterLogic(peaks, peaks_subset)
+		} else {
+			const new_subset: SPL = []
+			clusterLogic(peaks_subset, new_subset)
+			peaks_subset = new_subset
 		}
-	} else {
-		const new_subset: SPL = []
-		clusterLogic(peaks_subset, new_subset)
-		peaks_subset = new_subset
 	}
 })
 
