@@ -38,18 +38,22 @@ maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
 	/*
 	Sets the minimum distance in frequency between modes. This algorithm uses a greedy search to find the
 	loudest modes, and then discards those that are within the specified frequency range.
+	params:
+		threshold	minimum distance between modes (Hz)
 	*/
 
 	const clusterLogic = (S1: Readonly<SPL>, S2: SPL): void => {
 		// S2 is mutated __in place__
 		S1.forEach((entry: Readonly<SPL[0]>) => {
 			S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
-				return Math.abs(entry.frequency - entry_subset.frequency) < threshold
+				return Math.abs(entry.frequency - entry_subset.frequency) > threshold
 			}) && S2.push(entry)
 		})
 	}
 	if (peaks_subset.length === 0) {
-		clusterLogic(peaks, peaks_subset)
+		if (threshold !== 0) {
+			clusterLogic(peaks, peaks_subset)
+		}
 	} else {
 		const new_subset: SPL = []
 		clusterLogic(peaks_subset, new_subset)
@@ -61,8 +65,8 @@ maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<numb
 	/*
 	Create a subset of dominant modes for use when calling getMode.
 	params:
-		f_min	minimum frequency in range (hz)
-		f_max	maximum frequency in range (hz)
+		f_min	minimum frequency in range (Hz)
+		f_max	maximum frequency in range (Hz)
 	*/
 
 	peaks_subset = []
@@ -87,7 +91,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	Detect the dominant modes in an SPL test using the ___ algorithm.
 		See: https://ccrma.stanford.edu/~jos/sasp/Peak_Detection_Steps_3.html
 	params:
-		threshold	minimum peak amplitude (db)
+		threshold	minimum peak amplitude (dB)
 	*/
 
 	peaks = []
