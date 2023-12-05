@@ -579,7 +579,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 348.066178560256958, 68.0, 79.0, 22.0 ],
-					"text" : "setCluster 30"
+					"text" : "setCluster 50"
 				}
 
 			}
