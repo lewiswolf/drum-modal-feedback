@@ -23,10 +23,11 @@
 		// compiler config
 		"module": "CommonJS",
 		"target": "ES5",
-		"ignoreDeprecations": "5.0",
+		"esModuleInterop": true,
 		"sourceMap": false,
 		"outDir": "./code/dist",
 		"baseUrl": "./code/src",
 		"lib": ["es5"]
-	}
+	},
+	"include": ["code/src"]
 }

@@ -34,12 +34,39 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	}
 })
 
+maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
+	/*
+	Sets the minimum distance in frequency between modes. This algorithm uses a greedy search to find the
+	loudest modes, and then discards those that are within the specified frequency range.
+	params:
+		threshold	minimum distance between modes (Hz)
+	*/
+
+	const clusterLogic = (S1: Readonly<SPL>, S2: SPL): void => {
+		// S2 is mutated __in place__
+		S1.forEach((entry: Readonly<SPL[0]>) => {
+			S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
+				return Math.abs(entry.frequency - entry_subset.frequency) > threshold
+			}) && S2.push(entry)
+		})
+	}
+	if (threshold !== 0) {
+		if (peaks_subset.length === 0) {
+			clusterLogic(peaks, peaks_subset)
+		} else {
+			const new_subset: SPL = []
+			clusterLogic(peaks_subset, new_subset)
+			peaks_subset = new_subset
+		}
+	}
+})
+
 maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity): void => {
 	/*
 	Create a subset of dominant modes for use when calling getMode.
 	params:
-		f_min	minimum frequency in range (hz)
-		f_max	maximum frequency in range (hz)
+		f_min	minimum frequency in range (Hz)
+		f_max	maximum frequency in range (Hz)
 	*/
 
 	peaks_subset = []
@@ -64,13 +91,13 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 	Detect the dominant modes in an SPL test using the ___ algorithm.
 		See: https://ccrma.stanford.edu/~jos/sasp/Peak_Detection_Steps_3.html
 	params:
-		threshold	minimum peak amplitude (db)
+		threshold	minimum peak amplitude (dB)
 	*/
 
 	peaks = []
 	peaks_subset = []
 	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
-		if (i > 1 && i < SPL_current.length - 1) {
+		if (i > 0 && i < SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
 			const prev_entry = SPL_current[i - 1] as NonNullable<SPL[0]>
 			const next_entry = SPL_current[i + 1] as NonNullable<SPL[0]>
@@ -113,17 +140,25 @@ maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
 
 maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	/*
-	Import an SPL from a JSON file.
+	Safely import an SPL from a JSON file.
 	*/
 
-	fs.readFile(absolute_path, (err, data) => {
-		if (!err) {
-			SPL_current = JSON.parse(data.toString())
-			void maxmsp.outletBang()
-		} else {
-			void maxmsp.post('JSON could not be imported.')
+	try {
+		const json = JSON.parse(fs.readFileSync(absolute_path, 'utf-8').toString()) as SPL
+		if (
+			!(json instanceof Array) ||
+			json.every(
+				(entry: { amplitude: number | undefined; frequency: number | undefined } | undefined) =>
+					entry === undefined || entry.amplitude === undefined || entry.frequency === undefined,
+			)
+		) {
+			throw new Error('Parsed JSON does not match expected format.')
 		}
-	})
+		SPL_current = json
+		void maxmsp.outletBang()
+	} catch (err) {
+		err instanceof Error && void maxmsp.post(`JSON could not be imported: ${err.message}`)
+	}
 })
 
 maxmsp.addHandler('__importSweep', (frequency: Readonly<number>, amplitude: Readonly<number>): void => {
