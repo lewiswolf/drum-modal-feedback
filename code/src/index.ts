@@ -43,10 +43,11 @@ maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
 	*/
 
 	const clusterLogic = (S1: Readonly<SPL>, S2: SPL): void => {
-		// S2 is mutated __in place__
+		threshold /= 1200
 		S1.forEach((entry: Readonly<SPL[0]>) => {
+			// S2 is mutated __in place__
 			S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
-				return 1200 * Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
+				return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
 			}) && S2.push(entry)
 		})
 	}
