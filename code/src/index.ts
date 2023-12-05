@@ -1,6 +1,6 @@
 // dependencies
-import * as fs from 'fs'
-import * as path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import { default as maxmsp } from 'max-api'
 
 // globals
