@@ -54,6 +54,9 @@ maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
 		if (peaks_subset.length === 0) {
 			clusterLogic(peaks, peaks_subset)
 		} else {
+			// This section of the routine assumes that setRange was just called.
+			// Successive calls without first calling setRange again will continually
+			// iterate over the previously defined subset and produce undesired results.
 			const new_subset: SPL = []
 			clusterLogic(peaks_subset, new_subset)
 			peaks_subset = new_subset

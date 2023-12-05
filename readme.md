@@ -14,6 +14,7 @@ npm run build
 
 -   [HISSTools Impulse Response Toolbox](https://github.com/HISSTools/HISSTools_Impulse_Response_Toolbox)
 -   [NodeJS](https://formulae.brew.sh/formula/node)
+-   [SP Tools](https://github.com/rconstanzo/sp-tools)
 
 # Usage
 
