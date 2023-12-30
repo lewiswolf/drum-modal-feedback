@@ -17,7 +17,45 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"lint": "prettier --write --config ./.prettierrc .",
+		"lint": "prettier --write .",
 		"test": "tsc && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/strict-type-checked"
+		],
+		"ignorePatterns": [
+			"dist",
+			"unused"
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"project": [
+				"./tsconfig.json"
+			]
+		},
+		"plugins": [
+			"@typescript-eslint"
+		]
+	},
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSpacing": true,
+		"bracketSameLine": false,
+		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "strict",
+		"jsxSingleQuote": true,
+		"printWidth": 110,
+		"quoteProps": "as-needed",
+		"semi": false,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true
 	}
 }
