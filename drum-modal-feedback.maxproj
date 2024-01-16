@@ -2,8 +2,8 @@
 	"name" : "drum-modal-feedback",
 	"version" : 1,
 	"creationdate" : 3781011549,
-	"modificationdate" : 3783345609,
-	"viewrect" : [ -1920.0, -65.0, 1920.0, 956.0 ],
+	"modificationdate" : 3788247513,
+	"viewrect" : [ 150.0, 187.0, 1215.0, 603.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -49,6 +49,11 @@
 			}
 ,
 			"spectrumdraw~.mxo" : 			{
+				"kind" : "object",
+				"local" : 1
+			}
+,
+			"fluid.ampfeature~.mxo" : 			{
 				"kind" : "object",
 				"local" : 1
 			}
