@@ -32,8 +32,8 @@ Connect your drum to the patch's audio in, and your transducer to the audio out.
 
 Once the analysis is completed, you can query the analysis bpatcher with a number of commands.
 
--   `getMode` takes a list of integer arguments, and outputs the nth loudest mode.
--   `setCluster` takes an argument in cents, and limits the output of `getMode` to not produce any modes that are that distance in cents apart.
+-   `getMode` takes a list of integer arguments, and outputs the nth loudest mode(s).
+-   `setCluster` takes an argument in cents, and limits the output of `getMode` to not produce any modes that are less than that distance in cents apart.
 -   `setRange` takes two arguments (f_min and f_max), and limits the output of `getMode` to that frequency range.
 
 ### Synthesis
