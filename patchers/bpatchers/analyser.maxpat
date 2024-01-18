@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1886.0, -62.0, 1852.0, 928.0 ],
+		"rect" : [ 184.0, 271.0, 812.0, 519.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -71,14 +71,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1886.0, -118.0, 1852.0, 984.0 ],
+						"rect" : [ 184.0, 271.0, 1147.0, 519.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -113,7 +113,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 425.0, 61.0, 121.0, 33.0 ],
+									"patching_rect" : [ 425.0, 61.0, 125.0, 33.0 ],
 									"text" : "always call setRange before setCluster!"
 								}
 
@@ -272,8 +272,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 23.0, 325.0, 29.5, 22.0 ],
-									"text" : "f"
+									"patching_rect" : [ 23.0, 325.0, 36.0, 22.0 ],
+									"text" : "f -40."
 								}
 
 							}
@@ -577,8 +577,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 969.0, 96.0, 84.0, 22.0 ],
-					"text" : "loadmess -40."
+					"patching_rect" : [ 969.0, 96.0, 103.0, 22.0 ],
+					"text" : "loadmess set -40."
 				}
 
 			}
@@ -704,7 +704,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-47",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -735,8 +735,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -917,8 +917,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1421,7 +1421,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 423.0, 232.0, 30.0, 30.0 ]
 								}
 
@@ -1841,8 +1841,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2238,6 +2238,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -2249,7 +2251,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2318,7 +2320,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 262.25, 400.0, 27.0 ],
 					"style" : "default",
-					"text" : "Analysing Sweep",
+					"text" : "",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Ready",
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -2330,7 +2332,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2364,11 +2366,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-88",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 402.0, 78.0, 30.0, 30.0 ]
 				}
 
@@ -2686,7 +2688,27 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "index.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/squiggle/clientpage/js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "irmeasure~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "irvalue~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "spectrumdraw~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
