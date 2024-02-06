@@ -7,18 +7,18 @@
 	"source": "code/src/index.ts",
 	"dependencies": {
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^20.11.4",
-		"@typescript-eslint/eslint-plugin": "^6.19.0",
-		"@typescript-eslint/parser": "^6.19.0",
+		"@types/node": "^20.11.16",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
 		"eslint": "^8.56.0",
-		"prettier": "^3.2.2",
+		"prettier": "^3.2.5",
 		"typescript": "^5.3.3"
 	},
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"format": "prettier --write .",
-		"test": "tsc && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+		"test": "tsc && eslint . --ext ts --report-unused-disable-directives --max-warnings 0"
 	},
 	"eslintConfig": {
 		"root": true,
