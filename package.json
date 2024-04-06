@@ -6,13 +6,15 @@
 	"main": "code/dist/index.js",
 	"source": "code/src/index.ts",
 	"dependencies": {
+		"typescript": "^5.4.4"
+	},
+	"devDependencies": {
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^20.11.30",
-		"@typescript-eslint/eslint-plugin": "^7.4.0",
-		"@typescript-eslint/parser": "^7.4.0",
+		"@types/node": "^20.12.4",
+		"@typescript-eslint/eslint-plugin": "^7.5.0",
+		"@typescript-eslint/parser": "^7.5.0",
 		"eslint": "^8.57.0",
-		"prettier": "^3.2.5",
-		"typescript": "^5.4.3"
+		"prettier": "^3.2.5"
 	},
 	"scripts": {
 		"build": "tsc",

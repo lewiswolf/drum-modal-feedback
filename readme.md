@@ -45,6 +45,7 @@ There are two synthesisers in this patch. A modal resonator, whose modal amplitu
 The NodeJS part of the patch is in `code/src`. For development, use `node-debug.maxpat` to test your changes.
 
 ```bash
+npm install --include=dev # install dev dependencies
 npm run dev # npm run build with --watch flag
 npm run test # test the project with eslint
 npm run format # format the project
