@@ -24,9 +24,11 @@ npm run build
 -   Drum Trigger
 -   Transducer & Amplifier
 
+Mount the drum trigger on your drum in the traditional manner, and attach the transducer to your drum on either the top or bottom skin.
+
 ### Analysis
 
-Connect your drum to the patch's audio in, and your transducer to the audio out. Then click 'Perform ESS' and wait until it has finished. That's it!
+Connect your drum trigger to the patch's audio in, and your transducer to the audio out. Then click 'Perform ESS' and wait until it has finished. That's it!
 
 ### Modes
 
