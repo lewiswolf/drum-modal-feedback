@@ -21,13 +21,14 @@
 		"strictPropertyInitialization": true,
 		"useUnknownInCatchVariables": true,
 		// compiler config
-		"module": "CommonJS",
-		"target": "ES5",
-		"esModuleInterop": true,
-		"sourceMap": false,
-		"outDir": "./code/dist",
 		"baseUrl": "./code/src",
-		"lib": ["es5"]
+		"lib": ["es5"],
+		"esModuleInterop": true,
+		"module": "CommonJS",
+		"outDir": "./code/dist",
+		"removeComments": true,
+		"sourceMap": false,
+		"target": "ES5"
 	},
 	"include": ["code/src"]
 }
