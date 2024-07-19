@@ -5,16 +5,14 @@
 	"description": "Javascript API for dum-modal-feedback",
 	"main": "code/dist/index.js",
 	"source": "code/src/index.ts",
-	"dependencies": {
-		"typescript": "^5.5.3"
-	},
 	"devDependencies": {
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^20.14.10",
-		"@typescript-eslint/eslint-plugin": "^7.16.0",
-		"@typescript-eslint/parser": "^7.16.0",
+		"@types/node": "^20.14.11",
+		"@typescript-eslint/eslint-plugin": "^7.16.1",
+		"@typescript-eslint/parser": "^7.16.1",
 		"eslint": "^8.57.0",
-		"prettier": "^3.3.3"
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.3"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -52,6 +50,16 @@
 		"endOfLine": "lf",
 		"htmlWhitespaceSensitivity": "strict",
 		"jsxSingleQuote": true,
+		"overrides": [
+			{
+				"files": [
+					"*.maxproj"
+				],
+				"options": {
+					"parser": "json"
+				}
+			}
+		],
 		"printWidth": 110,
 		"quoteProps": "as-needed",
 		"semi": false,
