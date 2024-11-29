@@ -12,17 +12,17 @@ npm run build
 
 ### Dependencies
 
--   [FluCoMa](https://github.com/flucoma/flucoma-max/)
--   [HISSTools Impulse Response Toolbox](https://github.com/HISSTools/HISSTools_Impulse_Response_Toolbox)
--   [NodeJS](https://formulae.brew.sh/formula/node)
--   [SP Tools](https://github.com/rconstanzo/sp-tools)
+- [FluCoMa](https://github.com/flucoma/flucoma-max/)
+- [HISSTools Impulse Response Toolbox](https://github.com/HISSTools/HISSTools_Impulse_Response_Toolbox)
+- [NodeJS](https://formulae.brew.sh/formula/node)
+- [SP Tools](https://github.com/rconstanzo/sp-tools)
 
 # Usage
 
 ### Hardware
 
--   Drum Trigger
--   Transducer & Amplifier
+- Drum Trigger
+- Transducer & Amplifier
 
 Mount the drum trigger on your drum in the traditional manner, and attach the transducer to your drum on either the top or bottom skin.
 
@@ -34,9 +34,9 @@ Connect your drum trigger to the patch's audio in, and your transducer to the au
 
 Once the analysis is completed, you can query the analysis bpatcher with a number of commands.
 
--   `getMode` takes a list of integer arguments, and outputs the nth loudest mode(s).
--   `setCluster` takes an argument in cents, and limits the output of `getMode` to not produce any modes that are less than that distance in cents apart.
--   `setRange` takes two arguments (f_min and f_max), and limits the output of `getMode` to that frequency range.
+- `getMode` takes a list of integer arguments, and outputs the nth loudest mode(s).
+- `setCluster` takes an argument in cents, and limits the output of `getMode` to not produce any modes that are less than that distance in cents apart.
+- `setRange` takes two arguments (f_min and f_max), and limits the output of `getMode` to that frequency range.
 
 ### Synthesis
 

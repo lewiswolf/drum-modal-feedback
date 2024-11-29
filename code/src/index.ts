@@ -12,7 +12,7 @@ let peaks_subset: SPL = [] // a second subset for applying frequency range limit
 // PUBLIC METHODS 	//
 //	//	//	//	//	//
 
-maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
+maxmsp.addHandler('getMode', (...N: readonly number[]): void => {
 	/*
 	Get the nth most dominant mode of a precomputed SPL.
 	*/
@@ -25,7 +25,7 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 				if (n >= P.length || n < 0) {
 					void maxmsp.post(`Mode number ${n.toString()} out of range.`)
 				}
-				return [P[n]?.frequency || 0, P[n]?.amplitude || 0]
+				return [P[n]?.frequency ?? 0, P[n]?.amplitude ?? 0]
 			}).flat()
 		}
 		// to save memory, we declare the function prior and call it using
@@ -34,7 +34,7 @@ maxmsp.addHandler('getMode', (...N: Readonly<number[]>): void => {
 	}
 })
 
-maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
+maxmsp.addHandler('setCluster', (threshold = 0): void => {
 	/*
 	Sets the minimum distance in cents between modes. This algorithm uses a greedy search to find the
 	loudest modes, and then discards those that are within the specified frequency range.
@@ -46,9 +46,13 @@ maxmsp.addHandler('setCluster', (threshold: number = 0): void => {
 		threshold /= 1200
 		S1.forEach((entry: Readonly<SPL[0]>) => {
 			// S2 is mutated __in place__
-			S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
-				return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
-			}) && S2.push(entry)
+			if (
+				S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
+					return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
+				})
+			) {
+				S2.push(entry)
+			}
 		})
 	}
 	if (threshold !== 0) {
@@ -153,7 +157,7 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 			!(json instanceof Array) ||
 			json.every(
 				(entry: { amplitude: number | undefined; frequency: number | undefined } | undefined) =>
-					entry === undefined || entry.amplitude === undefined || entry.frequency === undefined,
+					!(entry?.amplitude && entry.frequency),
 			)
 		) {
 			throw new Error('Parsed JSON does not match expected format.')
@@ -161,7 +165,9 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 		SPL_current = json
 		void maxmsp.outletBang()
 	} catch (err) {
-		err instanceof Error && void maxmsp.post(`JSON could not be imported: ${err.message}`)
+		if (err instanceof Error) {
+			void maxmsp.post(`JSON could not be imported: ${err.message}`)
+		}
 	}
 })
 

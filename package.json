@@ -6,42 +6,19 @@
 	"main": "code/dist/index.js",
 	"source": "code/src/index.ts",
 	"devDependencies": {
+		"@eslint/js": "^9.15.0",
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^20.14.11",
-		"@typescript-eslint/eslint-plugin": "^7.16.1",
-		"@typescript-eslint/parser": "^7.16.1",
-		"eslint": "^8.57.0",
-		"prettier": "^3.3.3",
-		"typescript": "^5.5.3"
+		"@types/node": "^22.10.1",
+		"eslint": "^9.15.0",
+		"prettier": "^3.4.1",
+		"typescript": "^5.7.2",
+		"typescript-eslint": "^8.16.0"
 	},
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"format": "prettier --write .",
-		"test": "tsc && eslint . --ext ts"
-	},
-	"eslintConfig": {
-		"root": true,
-		"env": {
-			"node": true
-		},
-		"extends": [
-			"eslint:recommended",
-			"plugin:@typescript-eslint/strict-type-checked"
-		],
-		"ignorePatterns": [
-			"dist",
-			"unused"
-		],
-		"parser": "@typescript-eslint/parser",
-		"parserOptions": {
-			"project": [
-				"./tsconfig.json"
-			]
-		},
-		"plugins": [
-			"@typescript-eslint"
-		]
+		"test": "tsc && eslint ."
 	},
 	"prettier": {
 		"arrowParens": "always",
