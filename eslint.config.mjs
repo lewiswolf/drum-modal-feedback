@@ -6,7 +6,7 @@ export default tseslint.config(
 	...tseslint.configs.strictTypeChecked,
 	...tseslint.configs.stylisticTypeChecked,
 	{
-		ignores: ['**/code/dist/**', '**/unused/**', '**/**.js'],
+		ignores: ['eslint.config.mjs', '**/dist/**', '**/unused/**', '**/**.js'],
 	},
 	{
 		languageOptions: {

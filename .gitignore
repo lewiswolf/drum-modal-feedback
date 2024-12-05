@@ -8,4 +8,5 @@ externals
 # misc
 *.pdf
 .DS_Store
+todo.md
 unused
