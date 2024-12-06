@@ -8,5 +8,6 @@ externals
 # misc
 *.pdf
 .DS_Store
+.maxsnap
 todo.md
 unused

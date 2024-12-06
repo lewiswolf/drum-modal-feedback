@@ -9,30 +9,64 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [184.0, 215.0, 1150.0, 575.0],
+		"rect": [183.0, 215.0, 1221.0, 575.0],
 		"gridsize": [15.0, 15.0],
 		"boxes": [
 			{
 				"box": {
+					"id": "obj-21",
+					"linecount": 3,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [790.0, 75.0, 141.0, 47.0],
+					"text": "test getMode\noutput should be: 35 -20 25 -30"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-20",
+					"linecount": 3,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [788.0, 198.0, 150.0, 47.0],
+					"text": "test cents threshold\noutput should be: 25 -20 45 -30"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-19",
+					"linecount": 2,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [788.0, 352.0, 150.0, 33.0],
+					"text": "test frequency range\noutput should be: 25 -30"
+				}
+			},
+			{
+				"box": {
 					"id": "obj-17",
-					"linecount": 8,
+					"linecount": 10,
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [648.5, 152.5, 139.0, 116.0],
-					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, setCluster 10, getMode 0 1"
+					"patching_rect": [625.0, 150.0, 162.0, 143.0],
+					"text": "__importSweep 20. -40, __importSweep 25. -20, __importSweep 30. -40, __importSweep 35. -30, __importSweep 40. -40, __importSweep 45. -30, __importSweep 50. -40, __analyseSweep, defineSubset 0 48000 1000, getMode 0 1"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-12",
+					"linecount": 2,
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [567.083333333333371, 120.0, 75.0, 22.0],
-					"text": "getMode 0 1"
+					"patching_rect": [354.5, 104.0, 85.0, 35.0],
+					"text": "defineSubset, getMode 0 1"
 				}
 			},
 			{
@@ -41,7 +75,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [134.0, 29.0, 77.0, 20.0],
+					"patching_rect": [101.0, 25.0, 77.0, 20.0],
 					"text": "test backend"
 				}
 			},
@@ -53,8 +87,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [648.5, 279.0, 139.0, 116.0],
-					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, setRange 20 30, getMode 0"
+					"patching_rect": [622.0, 310.0, 161.0, 116.0],
+					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, defineSubset 20 30, getMode 0"
 				}
 			},
 			{
@@ -63,7 +97,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [648.5, 12.0, 75.0, 20.0],
+					"patching_rect": [616.0, 8.0, 75.0, 20.0],
 					"text": "test frontend"
 				}
 			},
@@ -84,7 +118,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [-1886.0, -118.0, 1852.0, 984.0],
+						"rect": [183.0, 215.0, 1221.0, 575.0],
 						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
@@ -103,10 +137,10 @@
 									"id": "obj-18",
 									"maxclass": "newobj",
 									"numinlets": 1,
-									"numoutlets": 5,
-									"outlettype": ["", "", "", "", ""],
-									"patching_rect": [50.0, 128.0, 153.0, 22.0],
-									"text": "regexp self: @substitute \" \""
+									"numoutlets": 2,
+									"outlettype": ["", "int"],
+									"patching_rect": [50.0, 128.0, 128.0, 22.0],
+									"text": "conformpath max boot"
 								}
 							},
 							{
@@ -170,9 +204,9 @@
 								}
 							}
 						],
-						"originid": "pat-182"
+						"originid": "pat-606"
 					},
-					"patching_rect": [476.666666666666686, 120.0, 84.0, 22.0],
+					"patching_rect": [534.166666666666629, 117.0, 84.0, 22.0],
 					"saved_object_attributes": {
 						"globalpatchername": ""
 					},
@@ -187,7 +221,7 @@
 					"numoutlets": 1,
 					"outlettype": ["bang"],
 					"parameter_enable": 0,
-					"patching_rect": [476.666666666666686, 93.0, 24.0, 24.0]
+					"patching_rect": [534.166666666666629, 89.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -207,7 +241,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [184.0, 215.0, 1550.0, 575.0],
+						"rect": [183.0, 215.0, 1221.0, 575.0],
 						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
@@ -226,10 +260,10 @@
 									"id": "obj-18",
 									"maxclass": "newobj",
 									"numinlets": 1,
-									"numoutlets": 5,
-									"outlettype": ["", "", "", "", ""],
-									"patching_rect": [50.0, 157.0, 218.0, 22.0],
-									"text": "regexp \"Macintosh HD:\" @substitute \" \""
+									"numoutlets": 2,
+									"outlettype": ["", "int"],
+									"patching_rect": [50.0, 157.0, 128.0, 22.0],
+									"text": "conformpath max boot"
 								}
 							},
 							{
@@ -293,9 +327,9 @@
 								}
 							}
 						],
-						"originid": "pat-184"
+						"originid": "pat-608"
 					},
-					"patching_rect": [386.25, 120.0, 84.0, 22.0],
+					"patching_rect": [443.333333333333314, 117.0, 84.0, 22.0],
 					"saved_object_attributes": {
 						"globalpatchername": ""
 					},
@@ -310,7 +344,7 @@
 					"numoutlets": 1,
 					"outlettype": ["bang"],
 					"parameter_enable": 0,
-					"patching_rect": [386.25, 93.0, 24.0, 24.0]
+					"patching_rect": [443.333333333333314, 89.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -321,7 +355,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [648.5, 40.0, 139.0, 102.0],
+					"patching_rect": [625.0, 37.0, 157.0, 102.0],
 					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40, __analyseSweep, getMode 0 1"
 				}
 			},
@@ -333,20 +367,20 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [134.416666666666657, 67.0, 139.0, 76.0],
+					"patching_rect": [101.833333333333329, 63.0, 139.0, 76.0],
 					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-8",
-					"linecount": 10,
+					"linecount": 2,
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [64.0, 537.0, 67.0, 143.0],
-					"text": "JSON could not be imported: Parsed JSON does not match expected format."
+					"patching_rect": [31.0, 533.0, 67.0, 35.0],
+					"text": "35 -20 25 -30"
 				}
 			},
 			{
@@ -356,7 +390,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"outlettype": ["", "", "int"],
-					"patching_rect": [64.0, 505.0, 115.0, 22.0],
+					"patching_rect": [31.0, 501.0, 115.0, 22.0],
 					"text": "console"
 				}
 			},
@@ -366,7 +400,7 @@
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [64.0, 470.0, 32.0, 22.0],
+					"patching_rect": [31.0, 466.0, 32.0, 22.0],
 					"text": "print"
 				}
 			},
@@ -377,7 +411,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [279.833333333333314, 120.0, 100.0, 22.0],
+					"patching_rect": [247.666666666666686, 117.0, 100.0, 22.0],
 					"text": "__analyseSweep"
 				}
 			},
@@ -397,7 +431,7 @@
 					"numoutlets": 1,
 					"offset": [0.0, 0.0],
 					"outlettype": ["bang"],
-					"patching_rect": [188.0, 470.0, 400.0, 220.0],
+					"patching_rect": [155.0, 466.0, 400.0, 220.0],
 					"viewvisibility": 1
 				}
 			},
@@ -408,7 +442,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [64.0, 120.0, 64.0, 22.0],
+					"patching_rect": [31.0, 117.0, 64.0, 22.0],
 					"text": "script start"
 				}
 			},
@@ -420,7 +454,7 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [64.0, 424.0, 143.0, 35.0],
+					"patching_rect": [31.0, 420.0, 143.0, 35.0],
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
@@ -522,7 +556,7 @@
 				}
 			}
 		],
-		"originid": "pat-180",
+		"originid": "pat-604",
 		"dependency_cache": [
 			{
 				"name": "fit_jweb_to_bounds.js",

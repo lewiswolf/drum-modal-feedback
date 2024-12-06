@@ -1,6 +1,6 @@
 {
 	"name": "drum-modal-feedback",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"author": "Lewis Wolstanholme & Jordie Shier",
 	"description": "Javascript API for dum-modal-feedback",
 	"main": "code/dist/index.js",

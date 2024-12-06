@@ -12,6 +12,38 @@ let peaks_subset: SPL = [] // a second subset for applying frequency range limit
 // PUBLIC METHODS 	//
 //	//	//	//	//	//
 
+maxmsp.addHandler(
+	'defineSubset',
+	(f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity, threshold = 0): void => {
+		/*
+		Create a subset of dominant modes for use when calling getMode. The first two arguments
+		set the frequency range for subset. The third argument sets the minimum distance in
+		cents between modes. This algorithm uses a greedy search to find the loudest modes, and
+		then discards those that are within the specified frequency range.
+		params:
+			f_min		minimum frequency in range (Hz)
+			f_max		maximum frequency in range (Hz)
+			threshold	minimum distance between modes (cents)
+		*/
+
+		peaks_subset = []
+		if (f_min > 0 || f_max < Infinity || threshold > 0) {
+			threshold /= 1200
+			peaks.forEach((entry: SPL[0]): void => {
+				if (
+					entry.frequency >= f_min &&
+					entry.frequency <= f_max &&
+					peaks_subset.every((entry_subset: Readonly<SPL[0]>): boolean => {
+						return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
+					})
+				) {
+					peaks_subset.push(entry)
+				}
+			})
+		}
+	},
+)
+
 maxmsp.addHandler('getMode', (...N: readonly number[]): void => {
 	/*
 	Get the nth most dominant mode of a precomputed SPL.
@@ -31,62 +63,6 @@ maxmsp.addHandler('getMode', (...N: readonly number[]): void => {
 		// to save memory, we declare the function prior and call it using
 		// peaks_subset if it is populated, or peaks if it is not.
 		void maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
-	}
-})
-
-maxmsp.addHandler('setCluster', (threshold = 0): void => {
-	/*
-	Sets the minimum distance in cents between modes. This algorithm uses a greedy search to find the
-	loudest modes, and then discards those that are within the specified frequency range.
-	params:
-		threshold	minimum distance between modes (cents)
-	*/
-
-	const clusterLogic = (S1: Readonly<SPL>, S2: SPL): void => {
-		threshold /= 1200
-		S1.forEach((entry: Readonly<SPL[0]>) => {
-			// S2 is mutated __in place__
-			if (
-				S2.every((entry_subset: Readonly<SPL[0]>): boolean => {
-					return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
-				})
-			) {
-				S2.push(entry)
-			}
-		})
-	}
-	if (threshold !== 0) {
-		if (peaks_subset.length === 0) {
-			clusterLogic(peaks, peaks_subset)
-		} else {
-			// This section of the routine assumes that setRange was just called.
-			// Successive calls without first calling setRange again will continually
-			// iterate over the previously defined subset and produce undesired results.
-			const new_subset: SPL = []
-			clusterLogic(peaks_subset, new_subset)
-			peaks_subset = new_subset
-		}
-	}
-})
-
-maxmsp.addHandler('setRange', (f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity): void => {
-	/*
-	Create a subset of dominant modes for use when calling getMode.
-	params:
-		f_min	minimum frequency in range (Hz)
-		f_max	maximum frequency in range (Hz)
-	*/
-
-	peaks_subset = []
-	if (
-		f_min > 20 ||
-		f_max < Math.max(...SPL_current.map((entry: Readonly<SPL[0]>): number => entry.frequency))
-	) {
-		peaks.forEach((entry: SPL[0]): void => {
-			if (entry.frequency >= f_min && entry.frequency <= f_max) {
-				peaks_subset.push(entry)
-			}
-		})
 	}
 })
 

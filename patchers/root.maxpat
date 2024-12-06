@@ -2,42 +2,58 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 5,
-			"revision": 7,
+			"major": 9,
+			"minor": 0,
+			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [184.0, 215.0, 1147.0, 575.0],
-		"bglocked": 0,
-		"openinpresentation": 0,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
-		"default_fontname": "Arial",
-		"gridonopen": 1,
+		"rect": [138.0, 215.0, 1221.0, 575.0],
 		"gridsize": [15.0, 15.0],
-		"gridsnaponopen": 1,
-		"objectsnaponopen": 1,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
-		"lefttoolbarpinned": 0,
-		"toptoolbarpinned": 0,
-		"righttoolbarpinned": 0,
-		"bottomtoolbarpinned": 0,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
-		"style": "",
-		"subpatcher_template": "",
-		"assistshowspatchername": 0,
 		"boxes": [
+			{
+				"box": {
+					"id": "obj-19",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [691.0, 84.0, 35.0, 20.0],
+					"text": "reset"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-11",
+					"linecount": 2,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [611.0, 141.0, 118.0, 33.0],
+					"text": "set frequency range and cents threshold"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-10",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [611.0, 114.0, 115.0, 20.0],
+					"text": "set frequency range"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-4",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"outlettype": [""],
+					"patching_rect": [735.0, 113.0, 139.0, 22.0],
+					"text": "defineSubset 1000 5000"
+				}
+			},
 			{
 				"box": {
 					"id": "obj-54",
@@ -45,7 +61,7 @@
 					"numinlets": 2,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [735.107844948768616, 521.0, 53.0, 22.0],
+					"patching_rect": [735.0, 532.0, 53.0, 22.0],
 					"text": "zl filter 0"
 				}
 			},
@@ -55,7 +71,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [275.107844948768616, 15.000000715255737, 51.0, 20.0],
+					"patching_rect": [275.0, 9.0, 51.0, 20.0],
 					"text": "audio in"
 				}
 			},
@@ -65,7 +81,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [1508.166666388511658, 572.857143572398627, 107.0, 20.0],
+					"patching_rect": [1508.0, 584.0, 107.0, 20.0],
 					"text": "regamp / randamp"
 				}
 			},
@@ -76,7 +92,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [1526.666666388511658, 620.000000715255737, 70.0, 22.0],
+					"patching_rect": [1526.0, 631.0, 70.0, 22.0],
 					"text": "loadmess 0"
 				}
 			},
@@ -88,7 +104,8 @@
 					"numoutlets": 1,
 					"outlettype": ["int"],
 					"parameter_enable": 0,
-					"patching_rect": [1526.666666388511658, 656.000000715255737, 24.0, 24.0]
+					"patching_rect": [1526.0, 667.0, 24.0, 24.0],
+					"svg": ""
 				}
 			},
 			{
@@ -101,41 +118,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [34.0, 134.0, 1372.0, 804.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -156,6 +147,8 @@
 										"valueof": {
 											"parameter_invisible": 1,
 											"parameter_longname": "vst~[5]",
+											"parameter_modmode": 0,
+											"parameter_osc_name": "<default>",
 											"parameter_shortname": "vst~[1]",
 											"parameter_type": 3
 										}
@@ -163,6 +156,40 @@
 									"saved_object_attributes": {
 										"parameter_enable": 1,
 										"parameter_mappable": 0
+									},
+									"snapshot": {
+										"filetype": "C74Snapshot",
+										"version": 2,
+										"minorversion": 0,
+										"name": "snapshotlist",
+										"origin": "vst~",
+										"type": "list",
+										"subtype": "Undefined",
+										"embed": 1,
+										"snapshot": {},
+										"snapshotlist": {
+											"current_snapshot": 0,
+											"entries": [
+												{
+													"filetype": "C74Snapshot",
+													"version": 2,
+													"minorversion": 0,
+													"name": "",
+													"origin": "",
+													"type": "AudioUnit",
+													"subtype": "AudioEffect",
+													"embed": 1,
+													"snapshot": {},
+													"fileref": {
+														"name": "",
+														"filename": ".maxsnap",
+														"filepath": "~/Desktop/drum-modal-feedback/data",
+														"filepos": -1,
+														"snapshotfileid": "edced7fc71d47a65e7c7b7cb6a3ecc6e"
+													}
+												}
+											]
+										}
 									},
 									"text": "vst~",
 									"varname": "vst~[1]",
@@ -296,14 +323,12 @@
 									"source": ["obj-8", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-686"
 					},
-					"patching_rect": [85.107844948768616, 693.000000715255737, 212.0, 22.0],
+					"patching_rect": [85.0, 704.0, 212.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p vst"
 				}
@@ -314,7 +339,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [633.107844948768616, 821.113219780536497, 100.0, 20.0],
+					"patching_rect": [633.0, 832.0, 100.0, 20.0],
 					"text": "Sinusoidal Level"
 				}
 			},
@@ -324,7 +349,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [874.107844948768616, 821.113219780536497, 96.0, 20.0],
+					"patching_rect": [874.0, 832.0, 96.0, 20.0],
 					"text": "Resonator Level"
 				}
 			},
@@ -335,7 +360,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": ["signal"],
-					"patching_rect": [735.107844948768616, 972.058353154961651, 58.0, 22.0],
+					"patching_rect": [735.0, 983.0, 58.0, 22.0],
 					"text": "mc.sum~"
 				}
 			},
@@ -346,7 +371,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [735.107844948768616, 788.000000715255624, 701.558821439743042, 22.0],
+					"patching_rect": [735.0, 799.0, 701.558821439743042, 22.0],
 					"text": "mc.combine~ 2"
 				}
 			},
@@ -360,7 +385,7 @@
 					"numoutlets": 2,
 					"outlettype": ["multichannelsignal", ""],
 					"parameter_enable": 0,
-					"patching_rect": [735.107844948768616, 821.113219780536497, 138.0, 141.0],
+					"patching_rect": [735.0, 832.0, 138.0, 141.0],
 					"saved_multichannel": 1
 				}
 			},
@@ -371,7 +396,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": ["signal"],
-					"patching_rect": [1417.666666388511658, 756.333334048588995, 39.0, 22.0],
+					"patching_rect": [1417.0, 768.0, 39.0, 22.0],
 					"text": "tanh~"
 				}
 			},
@@ -382,7 +407,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": ["signal"],
-					"patching_rect": [1417.666666388511658, 724.666667381922366, 58.0, 22.0],
+					"patching_rect": [1417.0, 736.0, 58.0, 22.0],
 					"text": "mc.sum~"
 				}
 			},
@@ -396,41 +421,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [-1886.0, -62.0, 1852.0, 928.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
+						"rect": [183.0, 215.0, 1147.0, 575.0],
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -550,41 +549,15 @@
 									"patcher": {
 										"fileversion": 1,
 										"appversion": {
-											"major": 8,
-											"minor": 5,
-											"revision": 7,
+											"major": 9,
+											"minor": 0,
+											"revision": 2,
 											"architecture": "x64",
 											"modernui": 1
 										},
 										"classnamespace": "dsp.gen",
 										"rect": [-1886.0, 115.0, 1852.0, 928.0],
-										"bglocked": 0,
-										"openinpresentation": 0,
-										"default_fontsize": 12.0,
-										"default_fontface": 0,
-										"default_fontname": "Arial",
-										"gridonopen": 1,
 										"gridsize": [15.0, 15.0],
-										"gridsnaponopen": 1,
-										"objectsnaponopen": 1,
-										"statusbarvisible": 2,
-										"toolbarvisible": 1,
-										"lefttoolbarpinned": 0,
-										"toptoolbarpinned": 0,
-										"righttoolbarpinned": 0,
-										"bottomtoolbarpinned": 0,
-										"toolbars_unpinned_last_save": 0,
-										"tallnewobj": 0,
-										"boxanimatetime": 200,
-										"enablehscroll": 1,
-										"enablevscroll": 1,
-										"devicewidth": 0.0,
-										"description": "",
-										"digest": "",
-										"tags": "",
-										"style": "",
-										"subpatcher_template": "",
-										"assistshowspatchername": 0,
 										"boxes": [
 											{
 												"box": {
@@ -615,7 +588,8 @@
 													"source": ["obj-5", 0]
 												}
 											}
-										]
+										],
+										"originid": "pat-706"
 									},
 									"patching_rect": [361.5, 425.895823419094086, 29.5, 22.0],
 									"text": "gen"
@@ -1183,14 +1157,12 @@
 									"source": ["obj-8", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-688"
 					},
-					"patching_rect": [1417.666666388511658, 693.000000715255737, 128.0, 22.0],
+					"patching_rect": [1417.0, 704.0, 128.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p modes to resonators"
 				}
@@ -1202,7 +1174,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [21.107844948768616, 572.857143572398627, 171.0, 33.0],
+					"patching_rect": [21.0, 584.0, 171.0, 33.0],
 					"text": "add an optional delay to the signal chain"
 				}
 			},
@@ -1214,7 +1186,8 @@
 					"numoutlets": 1,
 					"outlettype": ["int"],
 					"parameter_enable": 0,
-					"patching_rect": [181.607844948768616, 656.000000715255737, 24.0, 24.0]
+					"patching_rect": [181.0, 667.0, 24.0, 24.0],
+					"svg": ""
 				}
 			},
 			{
@@ -1224,7 +1197,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [181.607844948768616, 618.000000715255737, 70.0, 22.0],
+					"patching_rect": [181.0, 629.0, 70.0, 22.0],
 					"text": "loadmess 0"
 				}
 			},
@@ -1238,41 +1211,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [34.0, 134.0, 1372.0, 804.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -1381,14 +1328,12 @@
 									"source": ["obj-8", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-708"
 					},
-					"patching_rect": [21.107844948768616, 618.000000715255737, 103.0, 22.0],
+					"patching_rect": [21.0, 629.0, 103.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p load audio units"
 				}
@@ -1462,193 +1407,19 @@
 						",",
 						"AUVectorPanner",
 						",",
-						"BMS",
-						",",
-						"bx_subsynth",
-						",",
 						"Console Recall",
-						",",
-						"CRTIV Chorus",
-						",",
-						"CRTIV Reverb 2",
-						",",
-						"CRTIV Shumovick",
-						",",
-						"CRTIV Tape Bus",
-						",",
-						"Crunchessor",
-						",",
-						"Crystallizer",
-						",",
-						"CurveEQ",
-						",",
-						"Decapitator",
-						",",
-						"Deft Compressor",
-						",",
-						"Devil-Loc Deluxe",
-						",",
-						"Devil-Loc",
 						",",
 						"DLSMusicDevice",
 						",",
-						"Doubler2 (m)",
-						",",
-						"Doubler2 (m->s)",
-						",",
-						"Doubler2 (s)",
-						",",
-						"Doubler4 (m)",
-						",",
-						"Doubler4 (m->s)",
-						",",
-						"Doubler4 (s)",
-						",",
-						"Drumformer",
-						",",
-						"Duck",
-						",",
-						"EBusLim",
-						",",
-						"EchoBoy Jr",
-						",",
-						"EchoBoy",
-						",",
-						"EffectRack",
-						",",
-						"Elephant",
-						",",
-						"elysia alpha master",
-						",",
-						"elysia alpha mix",
-						",",
-						"elysia karacter master",
-						",",
-						"elysia karacter mix",
-						",",
-						"elysia mpressor",
-						",",
-						"elysia museq master",
-						",",
-						"elysia museq mix",
-						",",
-						"elysia nvelope",
-						",",
-						"elysia phils cascade",
-						",",
-						"FilterFreak1",
-						",",
-						"FilterFreak2",
-						",",
-						"GlissEQ",
-						",",
-						"HarmoniEQ",
+						"dpMeter5",
 						",",
 						"HRTFPanner",
 						",",
-						"IR-L (m)",
-						",",
-						"IR-L (m->s)",
-						",",
-						"IR-L efficient (s)",
-						",",
-						"IR-L full (s)",
-						",",
-						"iZotope Insight",
-						",",
-						"iZotope Meter Tap",
-						",",
-						"LF Max Punch",
-						",",
-						"Little AlterBoy",
-						",",
-						"Little MicroShift",
-						",",
-						"Little Plate",
-						",",
-						"Little PrimalTap",
-						",",
-						"Little Radiator",
-						",",
-						"MaxxBass (m)",
-						",",
-						"MaxxBass (s)",
-						",",
 						"Micro",
-						",",
-						"MicroShift",
-						",",
-						"Morphoder (m)",
-						",",
-						"Morphoder (m->s)",
-						",",
-						"Morphoder (s)",
-						",",
-						"MV2 (m)",
-						",",
-						"MV2 (s)",
-						",",
-						"NeuralResonator",
-						",",
-						"neutone",
-						",",
-						"OldSkoolVerb Plus",
 						",",
 						"One",
 						",",
-						"OVC-128",
-						",",
-						"Ozone 11 Clarity",
-						",",
-						"Ozone 11 Dynamic EQ",
-						",",
-						"Ozone 11 Dynamics",
-						",",
-						"Ozone 11 Equalizer",
-						",",
-						"Ozone 11 Exciter",
-						",",
-						"Ozone 11 Imager",
-						",",
-						"Ozone 11 Impact",
-						",",
-						"Ozone 11 Low End Focus",
-						",",
-						"Ozone 11 Master Rebalance",
-						",",
-						"Ozone 11 Match EQ",
-						",",
-						"Ozone 11 Maximizer",
-						",",
-						"Ozone 11 Spectral Shaper",
-						",",
-						"Ozone 11 Stabilizer",
-						",",
-						"Ozone 11 Vintage Compressor",
-						",",
-						"Ozone 11 Vintage EQ",
-						",",
-						"Ozone 11 Vintage Limiter",
-						",",
-						"Ozone 11 Vintage Tape",
-						",",
 						"Ozone 11",
-						",",
-						"PanMan",
-						",",
-						"Peakbuster",
-						",",
-						"PHA-979",
-						",",
-						"PhaseMistress",
-						",",
-						"Polysquasher 3",
-						",",
-						"Powershaper",
-						",",
-						"PrimalTap",
-						",",
-						"PrimeEQ",
 						",",
 						"Pro-C 2",
 						",",
@@ -1664,175 +1435,15 @@
 						",",
 						"Pro-R",
 						",",
-						"PS22 Split (m->s)",
-						",",
-						"PS22 Split (s)",
-						",",
-						"PS22 Spread (m->s)",
-						",",
-						"PS22 Spread (s)",
-						",",
-						"PS22 Spread(10) (m->s)",
-						",",
-						"PS22 Spread(10) (s)",
-						",",
-						"PS22 XSplit (m->s)",
-						",",
-						"PS22 XSplit (s)",
-						",",
-						"Radiator",
-						",",
-						"RBass (m)",
-						",",
-						"RBass (s)",
-						",",
-						"RChannel (m)",
-						",",
-						"RChannel (m->s)",
-						",",
-						"RChannel (s)",
-						",",
-						"RCompressor (m)",
-						",",
-						"RCompressor (s)",
-						",",
-						"RDeEsser (m)",
-						",",
-						"RDeEsser (s)",
-						",",
-						"Renaissance Axx (m)",
-						",",
-						"Renaissance Axx (s)",
-						",",
-						"REQ 2 (m)",
-						",",
-						"REQ 2 (s)",
-						",",
-						"REQ 4 (m)",
-						",",
-						"REQ 4 (s)",
-						",",
-						"REQ 6 (m)",
-						",",
-						"REQ 6 (s)",
-						",",
-						"RVerb (m->s)",
-						",",
-						"RVerb (s)",
-						",",
-						"RVox (m)",
-						",",
-						"RVox (s)",
-						",",
-						"RX 10 Breath Control",
-						",",
-						"RX 10 Connect",
-						",",
-						"RX 10 De-click",
-						",",
-						"RX 10 De-clip",
-						",",
-						"RX 10 De-crackle",
-						",",
-						"RX 10 De-ess",
-						",",
-						"RX 10 De-hum",
-						",",
-						"RX 10 De-plosive",
-						",",
-						"RX 10 De-reverb",
-						",",
-						"RX 10 Guitar De-noise",
-						",",
-						"RX 10 Monitor",
-						",",
-						"RX 10 Mouth De-click",
-						",",
-						"RX 10 Music Rebalance",
-						",",
-						"RX 10 Repair Assistant",
-						",",
-						"RX 10 Spectral De-noise",
-						",",
-						"RX 10 Spectral Editor",
-						",",
-						"RX 10 Voice De-noise",
-						",",
-						"S1 Imager (s)",
-						",",
-						"S1 MS Matrix (s)",
-						",",
-						"S1 Shuffler (s)",
-						",",
 						"Saturn 2",
 						",",
-						"Serum",
-						",",
-						"Shinechilla",
-						",",
-						"Sie-Q",
-						",",
 						"Simplon",
-						",",
-						"Sobor",
-						",",
-						"Soniformer",
-						",",
-						"SPAN Plus",
-						",",
-						"Spatifier",
-						",",
-						"SPL Attacker Plus",
-						",",
-						"SPL De-Esser Dual-Band",
-						",",
-						"SPL De-Esser",
-						",",
-						"SPL De-Verb Plus",
-						",",
-						"SPL DrumXchanger",
-						",",
-						"SPL EQ Ranger Plus",
-						",",
-						"SPL HawkEye",
-						",",
-						"SPL IRON",
-						",",
-						"SPL Mo-Verb Plus",
-						",",
-						"SPL Passeq Single",
-						",",
-						"SPL Passeq",
-						",",
-						"SPL PQ",
-						",",
-						"SPL Transient Designer Plus",
-						",",
-						"SPL TwinTube",
-						",",
-						"SPL Vitalizer MK2-T",
 						",",
 						"StandardCLIP",
 						",",
 						"SubLab",
 						",",
-						"TEOTE",
-						",",
-						"THE OVEN",
-						",",
 						"Timeless 3",
-						",",
-						"Tonal Balance Control",
-						",",
-						"TransGainer",
-						",",
-						"Tremolator",
-						",",
-						"TrueVerb (m)",
-						",",
-						"TrueVerb (m->s)",
-						",",
-						"TrueVerb (s)",
 						",",
 						"Twin 2",
 						",",
@@ -1882,6 +1493,8 @@
 						",",
 						"UAD Auto-Tune Realtime Advanced",
 						",",
+						"UAD Auto-Tune Realtime X",
+						",",
 						"UAD Avalon VT-737sp",
 						",",
 						"UAD Bermuda Triangle",
@@ -1909,6 +1522,8 @@
 						"UAD bx_tuner",
 						",",
 						"UAD C-Suite C-Axe",
+						",",
+						"UAD C-Suite C-Max",
 						",",
 						"UAD C-Suite C-Vox",
 						",",
@@ -2002,6 +1617,8 @@
 						",",
 						"UAD Helios Type 69",
 						",",
+						"UAD Hemisphere Mic Collection",
+						",",
 						"UAD Hitsville EQ Mastering",
 						",",
 						"UAD Hitsville EQ",
@@ -2011,6 +1628,8 @@
 						"UAD Ibanez Tube Screamer TS808",
 						",",
 						"UAD Korg SDD-3000",
+						",",
+						"UAD LA-6176 Channel Strip",
 						",",
 						"UAD Lexicon 224",
 						",",
@@ -2258,15 +1877,7 @@
 						",",
 						"UAD Vertigo VSM-3",
 						",",
-						"UADx 1176 Rev A Compressor",
-						",",
-						"UADx 1176AE Compressor",
-						",",
-						"UADx 1176LN Rev E Compressor",
-						",",
-						"UADx 175-B Compressor",
-						",",
-						"UADx 176 Compressor",
+						"UADx Ampex ATR-102 Master Tape",
 						",",
 						"UADx API 2500 Bus Compressor",
 						",",
@@ -2274,19 +1885,11 @@
 						",",
 						"UADx Brigade Chorus",
 						",",
-						"UADx Century Tube Channel Strip",
+						"UADx Capitol Chambers",
 						",",
-						"UADx dbx 160 Compressor",
-						",",
-						"UADx Fairchild 660 Compressor",
-						",",
-						"UADx Fairchild 670 Compressor",
+						"UADx Empirical Labs Distressor",
 						",",
 						"UADx Galaxy Tape Echo",
-						",",
-						"UADx Hitsville EQ Mastering",
-						",",
-						"UADx Hitsville EQ",
 						",",
 						"UADx Hitsville Reverb Chambers",
 						",",
@@ -2296,33 +1899,17 @@
 						",",
 						"UADx LA-2A Silver Compressor",
 						",",
-						"UADx LA-3A Compressor",
-						",",
 						"UADx Lexicon 224 Digital Reverb",
-						",",
-						"UADx Manley Tube Preamp",
-						",",
-						"UADx Manley VOXBOX Channel Strip",
-						",",
-						"UADx Moog Minimoog Synth",
 						",",
 						"UADx Neve 1073 Preamp and EQ",
 						",",
-						"UADx Opal Morphing Synth",
-						",",
 						"UADx Oxide Tape Recorder",
-						",",
-						"UADx PolyMAX Synth",
-						",",
-						"UADx Pultec EQP-1A EQ",
-						",",
-						"UADx Pultec HLF-3C EQ",
-						",",
-						"UADx Pultec MEQ-5 EQ",
 						",",
 						"UADx Pure Plate Reverb",
 						",",
 						"UADx Ravel Grand Piano",
+						",",
+						"UADx Sound City Studios",
 						",",
 						"UADx Studer A800 Tape Recorder",
 						",",
@@ -2330,34 +1917,16 @@
 						",",
 						"UADx Waterfall B3 Organ",
 						",",
-						"VariSaturator",
+						"UADx Waterfall Rotary Speaker",
 						",",
-						"Vertigo VSC-2",
-						",",
-						"Vertigo VSM-3",
-						",",
-						"Volcano 3",
-						",",
-						"Voxformer",
-						",",
-						"Warmifier",
-						",",
-						"Waves Tune LT (m)",
-						",",
-						"Waves Tune LT (s)",
-						",",
-						"Waves Tune Real-Time (m)",
-						",",
-						"Waves Tune Real-Time (s)",
-						",",
-						"Youlean Loudness Meter 2"
+						"Volcano 3"
 					],
 					"maxclass": "umenu",
 					"numinlets": 1,
 					"numoutlets": 3,
 					"outlettype": ["int", "", ""],
 					"parameter_enable": 0,
-					"patching_rect": [21.107844948768616, 656.000000715255737, 147.0, 23.0]
+					"patching_rect": [21.0, 667.0, 147.0, 23.0]
 				}
 			},
 			{
@@ -2370,41 +1939,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [34.0, 62.0, 1372.0, 804.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -2434,72 +1977,46 @@
 										"patcher": {
 											"fileversion": 1,
 											"appversion": {
-												"major": 8,
-												"minor": 5,
-												"revision": 7,
+												"major": 9,
+												"minor": 0,
+												"revision": 2,
 												"architecture": "x64",
 												"modernui": 1
 											},
 											"classnamespace": "dsp.gen",
 											"rect": [59.0, 106.0, 640.0, 480.0],
-											"bglocked": 0,
-											"openinpresentation": 0,
-											"default_fontsize": 12.0,
-											"default_fontface": 0,
-											"default_fontname": "Arial",
-											"gridonopen": 1,
 											"gridsize": [15.0, 15.0],
-											"gridsnaponopen": 1,
-											"objectsnaponopen": 1,
-											"statusbarvisible": 2,
-											"toolbarvisible": 1,
-											"lefttoolbarpinned": 0,
-											"toptoolbarpinned": 0,
-											"righttoolbarpinned": 0,
-											"bottomtoolbarpinned": 0,
-											"toolbars_unpinned_last_save": 0,
-											"tallnewobj": 0,
-											"boxanimatetime": 200,
-											"enablehscroll": 1,
-											"enablevscroll": 1,
-											"devicewidth": 0.0,
-											"description": "",
-											"digest": "",
-											"tags": "",
-											"style": "",
-											"subpatcher_template": "",
-											"assistshowspatchername": 0,
 											"boxes": [
 												{
 													"box": {
 														"maxclass": "newobj",
 														"text": "in 1",
-														"outlettype": [""],
+														"patching_rect": [50.0, 14.0, 28.0, 22.0],
 														"id": "obj-1",
 														"numinlets": 0,
 														"numoutlets": 1,
-														"patching_rect": [50.0, 14.0, 28.0, 22.0]
+														"outlettype": [""]
 													}
 												},
 												{
 													"box": {
 														"maxclass": "newobj",
 														"text": "pow 2",
-														"outlettype": [""],
+														"patching_rect": [50.0, 45.0, 41.0, 22.0],
 														"id": "obj-3",
 														"numinlets": 1,
 														"numoutlets": 1,
-														"patching_rect": [50.0, 45.0, 41.0, 22.0]
+														"outlettype": [""]
 													}
 												},
 												{
 													"box": {
 														"maxclass": "newobj",
 														"text": "out 1",
+														"patching_rect": [50.0, 75.0, 35.0, 22.0],
 														"id": "obj-4",
 														"numinlets": 1,
-														"numoutlets": 0,
-														"patching_rect": [50.0, 75.0, 35.0, 22.0]
+														"numoutlets": 0
 													}
 												}
 											],
@@ -2516,7 +2033,8 @@
 														"destination": ["obj-4", 0]
 													}
 												}
-											]
+											],
+											"originid": "pat-728"
 										}
 									},
 									"id": "obj-53",
@@ -2526,7 +2044,7 @@
 									"outlettype": ["multichannelsignal"],
 									"patching_rect": [42.0, 196.735283826725635, 55.0, 22.0],
 									"text": "mc.gen~",
-									"wrapper_uniquekey": "u420000567"
+									"wrapper_uniquekey": "u424029185"
 								}
 							},
 							{
@@ -2655,14 +2173,12 @@
 									"source": ["obj-57", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-710"
 					},
-					"patching_rect": [1021.107844948768616, 693.000000715255737, 172.0, 22.0],
+					"patching_rect": [1021.0, 704.0, 172.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p enevelope generator"
 				}
@@ -2674,7 +2190,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [735.107844948768616, 724.666667381922366, 305.0, 22.0],
+					"patching_rect": [735.0, 736.0, 305.0, 22.0],
 					"text": "mc.*~"
 				}
 			},
@@ -2686,7 +2202,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [1174.107844948768616, 608.000000715255737, 63.0, 35.0],
+					"patching_rect": [1174.0, 619.0, 63.0, 35.0],
 					"text": "loadmess 1000."
 				}
 			},
@@ -2698,7 +2214,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [1097.607844948768616, 608.000000715255737, 63.0, 35.0],
+					"patching_rect": [1097.0, 619.0, 63.0, 35.0],
 					"text": "loadmess 500."
 				}
 			},
@@ -2711,7 +2227,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [1097.607844948768616, 658.000000715255737, 50.0, 22.0]
+					"patching_rect": [1097.0, 669.0, 50.0, 22.0]
 				}
 			},
 			{
@@ -2723,7 +2239,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [1174.107844948768616, 658.000000715255737, 50.0, 22.0]
+					"patching_rect": [1174.0, 669.0, 50.0, 22.0]
 				}
 			},
 			{
@@ -2732,7 +2248,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [1110.191178282101873, 573.857143572398627, 41.0, 20.0],
+					"patching_rect": [1110.0, 585.0, 41.0, 20.0],
 					"text": "sigma"
 				}
 			},
@@ -2742,7 +2258,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [1192.191178282101873, 573.857143572398627, 25.0, 20.0],
+					"patching_rect": [1192.0, 585.0, 25.0, 20.0],
 					"text": "mu"
 				}
 			},
@@ -2753,7 +2269,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [841.107844948768616, 572.857143572398627, 111.0, 33.0],
+					"patching_rect": [841.0, 584.0, 111.0, 33.0],
 					"text": "Relative Amplitude (with inverse)"
 				}
 			},
@@ -2764,7 +2280,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [841.107844948768616, 620.000000715255737, 70.0, 22.0],
+					"patching_rect": [841.0, 631.0, 70.0, 22.0],
 					"text": "loadmess 2"
 				}
 			},
@@ -2778,7 +2294,7 @@
 					"numoutlets": 1,
 					"outlettype": [""],
 					"parameter_enable": 0,
-					"patching_rect": [841.107844948768616, 658.000000715255737, 92.0, 23.0],
+					"patching_rect": [841.0, 669.0, 92.0, 23.0],
 					"size": 2.0
 				}
 			},
@@ -2792,41 +2308,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [-1886.0, -118.0, 1852.0, 984.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -3241,14 +2731,12 @@
 									"source": ["obj-9", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-730"
 					},
-					"patching_rect": [735.107844948768616, 693.000000715255737, 125.0, 22.0],
+					"patching_rect": [735.0, 704.0, 125.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p modes to oscillators"
 				}
@@ -3260,7 +2748,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": ["signal"],
-					"patching_rect": [735.107844948768616, 756.333334048588995, 58.0, 22.0],
+					"patching_rect": [735.0, 768.0, 58.0, 22.0],
 					"text": "mc.sum~"
 				}
 			},
@@ -3270,7 +2758,7 @@
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [84.166666388511658, 1013.65573525428772, 45.0, 22.0],
+					"patching_rect": [84.0, 1025.0, 45.0, 22.0],
 					"text": "dac~ 1"
 				}
 			},
@@ -3284,41 +2772,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 5,
-							"revision": 7,
+							"major": 9,
+							"minor": 0,
+							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [34.0, 115.0, 1372.0, 751.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
 						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
-						"subpatcher_template": "",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -3449,14 +2911,12 @@
 									"source": ["obj-9", 0]
 								}
 							}
-						]
+						],
+						"originid": "pat-732"
 					},
-					"patching_rect": [858.482844948768616, 135.000000715255737, 77.0, 22.0],
+					"patching_rect": [916.0, 146.0, 77.0, 22.0],
 					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
+						"globalpatchername": ""
 					},
 					"text": "p getMode N"
 				}
@@ -3471,7 +2931,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [858.482844948768616, 102.000000715255737, 50.0, 22.0]
+					"patching_rect": [916.0, 113.0, 50.0, 22.0]
 				}
 			},
 			{
@@ -3481,30 +2941,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [633.732844948768616, 106.000000715255737, 63.0, 22.0],
-					"text": "setCluster"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [735.107844948768616, 135.000000715255737, 120.0, 22.0],
-					"text": "setRange 1000 5000"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-7",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [735.174023509025574, 106.000000715255737, 60.0, 22.0],
-					"text": "setRange"
+					"patching_rect": [735.0, 83.0, 79.0, 22.0],
+					"text": "defineSubset"
 				}
 			},
 			{
@@ -3514,8 +2952,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [633.732844948768616, 135.000000715255737, 93.0, 22.0],
-					"text": "setCluster 1000"
+					"patching_rect": [735.0, 146.0, 169.0, 22.0],
+					"text": "defineSubset 1000 5000 1000"
 				}
 			},
 			{
@@ -3534,7 +2972,7 @@
 					"numoutlets": 2,
 					"offset": [0.0, 0.0],
 					"outlettype": ["signal", "int"],
-					"patching_rect": [345.107844948768616, 181.000000715255737, 409.0, 330.0],
+					"patching_rect": [345.0, 192.0, 409.0, 330.0],
 					"viewvisibility": 1
 				}
 			},
@@ -3544,7 +2982,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [77.666666388511658, 1041.000000715255737, 58.0, 20.0],
+					"patching_rect": [77.0, 1052.0, 58.0, 20.0],
 					"text": "audio out"
 				}
 			},
@@ -3555,7 +2993,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": ["signal"],
-					"patching_rect": [278.107844948768616, 42.000000715255737, 45.0, 22.0],
+					"patching_rect": [278.0, 36.0, 45.0, 22.0],
 					"text": "adc~ 1"
 				}
 			}
@@ -3589,9 +3027,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-26", 0],
-					"midpoints": [
-						287.607844948768616, 75.147221505641937, 1030.607844948768616, 75.147221505641937
-					],
+					"midpoints": [287.5, 72.169316232204437, 1030.5, 72.169316232204437],
 					"order": 1,
 					"source": ["obj-14", 0]
 				}
@@ -3599,9 +3035,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-55", 0],
-					"midpoints": [
-						287.607844948768616, 75.500000715255737, 1427.166666388511658, 75.500000715255737
-					],
+					"midpoints": [287.5, 71.880951642990112, 1426.5, 71.880951642990112],
 					"order": 0,
 					"source": ["obj-14", 0]
 				}
@@ -3609,9 +3043,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-89", 0],
-					"midpoints": [
-						287.607844948768616, 75.34902423620224, 354.607844948768616, 75.34902423620224
-					],
+					"midpoints": [287.5, 72.048928359421552, 354.5, 72.048928359421552],
 					"order": 3,
 					"source": ["obj-14", 0]
 				}
@@ -3625,9 +3057,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-17", 0],
-					"midpoints": [
-						744.607844948768616, 1003.357044204624685, 93.666666388511658, 1003.357044204624685
-					],
+					"midpoints": [744.5, 1014.357044204624685, 93.5, 1014.357044204624685],
 					"source": ["obj-16", 0]
 				}
 			},
@@ -3712,6 +3142,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-89", 1],
+					"midpoints": [925.5, 180.0, 744.5, 180.0],
 					"source": ["obj-48", 0]
 				}
 			},
@@ -3737,9 +3168,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-55", 1],
-					"midpoints": [
-						744.607844948768616, 553.000000715255737, 1481.666666388511658, 553.000000715255737
-					],
+					"midpoints": [744.5, 564.000000715255737, 1481.0, 564.000000715255737],
 					"order": 0,
 					"source": ["obj-54", 0]
 				}
@@ -3776,12 +3205,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-89", 1],
-					"source": ["obj-7", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-23", 0],
 					"source": ["obj-83", 0]
 				}
@@ -3789,9 +3212,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-17", 0],
-					"midpoints": [
-						354.607844948768616, 1003.347891137003899, 93.666666388511658, 1003.347891137003899
-					],
+					"midpoints": [354.5, 1014.347891137003899, 93.5, 1014.347891137003899],
 					"source": ["obj-89", 0]
 				}
 			},
@@ -3808,6 +3229,7 @@
 				}
 			}
 		],
+		"originid": "pat-684",
 		"parameters": {
 			"obj-22::obj-34": ["vst~[5]", "vst~[1]", 0],
 			"parameterbanks": {
@@ -3820,6 +3242,13 @@
 			"inherited_shortname": 1
 		},
 		"dependency_cache": [
+			{
+				"name": ".maxsnap",
+				"bootpath": "~/Desktop/drum-modal-feedback/data",
+				"patcherrelativepath": "../data",
+				"type": "mx@s",
+				"implicit": 1
+			},
 			{
 				"name": "analyser.maxpat",
 				"bootpath": "~/Desktop/drum-modal-feedback/patchers/bpatchers",
@@ -3848,8 +3277,8 @@
 			},
 			{
 				"name": "sp.onset~.maxpat",
-				"bootpath": "~/Documents/Max 8/Packages/SP-Tools/patchers",
-				"patcherrelativepath": "../../../Documents/Max 8/Packages/SP-Tools/patchers",
+				"bootpath": "~/Documents/Max 9/Packages/SP-Tools/patchers",
+				"patcherrelativepath": "../../../Documents/Max 9/Packages/SP-Tools/patchers",
 				"type": "JSON",
 				"implicit": 1
 			},

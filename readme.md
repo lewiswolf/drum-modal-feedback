@@ -35,8 +35,7 @@ Connect your drum trigger to the patch's audio in, and your transducer to the au
 Once the analysis is completed, you can query the analysis bpatcher with a number of commands.
 
 - `getMode` takes a list of integer arguments, and outputs the nth loudest mode(s).
-- `setCluster` takes an argument in cents, and limits the output of `getMode` to not produce any modes that are less than that distance in cents apart.
-- `setRange` takes two arguments (f_min and f_max), and limits the output of `getMode` to that frequency range.
+- `defineSubset` takes at most three arguments (`f_min`, `f_max`, `threshold`), and is used to define a subset of a complete SPL test that `getMode` will then query. `f_min` and `f_max` are used to set the liminal frequency range, and similarly `threshold` is used to set the minimum distance between modes in cents. When `defineSubset` is called without arguments, everything is reset, and the full SPL can once again be queried by `getMode`.
 
 ### Synthesis
 
