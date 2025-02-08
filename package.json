@@ -1,22 +1,22 @@
 {
 	"name": "drum-modal-feedback",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"author": "Lewis Wolstanholme & Jordie Shier",
 	"license": "CC BY-NC-SA 4.0",
 	"description": "Javascript API for dum-modal-feedback",
-	"main": "code/dist/index.js",
-	"source": "code/src/index.ts",
+	"main": "code/dist/drum-modal-feedback.js",
+	"source": "code/src/drum-modal-feedback.ts",
 	"engines": {
 		"node": ">=20.0.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.18.0",
+		"@eslint/js": "^9.20.0",
 		"@types/max-api": "^2.0.3",
-		"@types/node": "^22.10.7",
-		"eslint": "^9.18.0",
+		"@types/node": "^22.13.1",
+		"eslint": "^9.20.0",
 		"prettier": "^3.4.2",
 		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.21.0"
+		"typescript-eslint": "^8.23.0"
 	},
 	"scripts": {
 		"build": "tsc",

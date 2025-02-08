@@ -4,12 +4,12 @@
 		"appversion": {
 			"major": 9,
 			"minor": 0,
-			"revision": 2,
+			"revision": 4,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [183.0, 215.0, 1221.0, 575.0],
+		"rect": [184.0, 215.0, 1147.0, 575.0],
 		"gridsize": [15.0, 15.0],
 		"boxes": [
 			{
@@ -113,7 +113,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 2,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -204,7 +204,7 @@
 								}
 							}
 						],
-						"originid": "pat-606"
+						"originid": "pat-320"
 					},
 					"patching_rect": [534.166666666666629, 117.0, 84.0, 22.0],
 					"saved_object_attributes": {
@@ -236,7 +236,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 2,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -327,7 +327,7 @@
 								}
 							}
 						],
-						"originid": "pat-608"
+						"originid": "pat-322"
 					},
 					"patching_rect": [443.333333333333314, 117.0, 84.0, 22.0],
 					"saved_object_attributes": {
@@ -374,13 +374,11 @@
 			{
 				"box": {
 					"id": "obj-8",
-					"linecount": 2,
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [31.0, 533.0, 67.0, 35.0],
-					"text": "35 -20 25 -30"
+					"patching_rect": [30.0, 518.0, 68.0, 22.0]
 				}
 			},
 			{
@@ -390,7 +388,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"outlettype": ["", "", "int"],
-					"patching_rect": [31.0, 501.0, 115.0, 22.0],
+					"patching_rect": [31.0, 486.0, 115.0, 22.0],
 					"text": "console"
 				}
 			},
@@ -400,7 +398,7 @@
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [31.0, 466.0, 32.0, 22.0],
+					"patching_rect": [31.0, 454.0, 32.0, 22.0],
 					"text": "print"
 				}
 			},
@@ -431,7 +429,7 @@
 					"numoutlets": 1,
 					"offset": [0.0, 0.0],
 					"outlettype": ["bang"],
-					"patching_rect": [155.0, 466.0, 400.0, 220.0],
+					"patching_rect": [340.0, 454.0, 400.0, 220.0],
 					"viewvisibility": 1
 				}
 			},
@@ -449,20 +447,19 @@
 			{
 				"box": {
 					"id": "obj-1",
-					"linecount": 2,
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [31.0, 420.0, 143.0, 35.0],
+					"patching_rect": [31.0, 420.0, 328.0, 22.0],
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
 						"watch": 1
 					},
-					"text": "node.script index.js @autostart 1 @watch 1",
+					"text": "node.script drum-modal-feedback.js @autostart 1 @watch 1",
 					"textfile": {
-						"filename": "index.js",
+						"filename": "drum-modal-feedback.js",
 						"flags": 0,
 						"embed": 0,
 						"autowatch": 1
@@ -556,18 +553,18 @@
 				}
 			}
 		],
-		"originid": "pat-604",
+		"originid": "pat-318",
 		"dependency_cache": [
 			{
-				"name": "fit_jweb_to_bounds.js",
-				"bootpath": "C74:/packages/Node for Max/patchers/debug-monitor",
+				"name": "drum-modal-feedback.js",
+				"bootpath": "~/Desktop/drum-modal-feedback/code/dist",
+				"patcherrelativepath": "../code/dist",
 				"type": "TEXT",
 				"implicit": 1
 			},
 			{
-				"name": "index.js",
-				"bootpath": "~/Desktop/drum-modal-feedback/code/dist",
-				"patcherrelativepath": "../code/dist",
+				"name": "fit_jweb_to_bounds.js",
+				"bootpath": "C74:/packages/Node for Max/patchers/debug-monitor",
 				"type": "TEXT",
 				"implicit": 1
 			},
