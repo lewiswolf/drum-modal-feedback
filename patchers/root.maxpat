@@ -2659,6 +2659,10 @@
 				"implicit": 1
 			},
 			{
+				"name": "fluid.ampfeature~.mxo",
+				"type": "iLaX"
+			},
+			{
 				"name": "irmeasure~.mxo",
 				"type": "iLaX"
 			},
