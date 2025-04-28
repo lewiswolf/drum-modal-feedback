@@ -4,7 +4,7 @@
 		"appversion": {
 			"major": 9,
 			"minor": 0,
-			"revision": 4,
+			"revision": 5,
 			"architecture": "x64",
 			"modernui": 1
 		},
@@ -61,8 +61,8 @@
 					"numinlets": 2,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [735.0, 532.0, 53.0, 22.0],
-					"text": "zl filter 0"
+					"patching_rect": [735.0, 532.0, 59.0, 22.0],
+					"text": "list.filter 0"
 				}
 			},
 			{
@@ -104,8 +104,7 @@
 					"numoutlets": 1,
 					"outlettype": ["int"],
 					"parameter_enable": 0,
-					"patching_rect": [1526.0, 667.0, 24.0, 24.0],
-					"svg": ""
+					"patching_rect": [1526.0, 667.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -120,12 +119,12 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [34.0, 134.0, 1372.0, 804.0],
+						"rect": [184.0, 215.0, 1147.0, 575.0],
 						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
@@ -148,7 +147,6 @@
 											"parameter_invisible": 1,
 											"parameter_longname": "vst~[5]",
 											"parameter_modmode": 0,
-											"parameter_osc_name": "<default>",
 											"parameter_shortname": "vst~[1]",
 											"parameter_type": 3
 										}
@@ -179,14 +177,7 @@
 													"type": "AudioUnit",
 													"subtype": "AudioEffect",
 													"embed": 1,
-													"snapshot": {},
-													"fileref": {
-														"name": "",
-														"filename": ".maxsnap",
-														"filepath": "~/Desktop/drum-modal-feedback/data",
-														"filepos": -1,
-														"snapshotfileid": "edced7fc71d47a65e7c7b7cb6a3ecc6e"
-													}
+													"snapshot": {}
 												}
 											]
 										}
@@ -324,12 +315,9 @@
 								}
 							}
 						],
-						"originid": "pat-352"
+						"originid": "pat-18"
 					},
 					"patching_rect": [85.0, 704.0, 212.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p vst"
 				}
 			},
@@ -423,7 +411,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -551,7 +539,7 @@
 										"appversion": {
 											"major": 9,
 											"minor": 0,
-											"revision": 4,
+											"revision": 5,
 											"architecture": "x64",
 											"modernui": 1
 										},
@@ -589,7 +577,7 @@
 												}
 											}
 										],
-										"originid": "pat-372"
+										"originid": "pat-38"
 									},
 									"patching_rect": [361.5, 425.895823419094086, 29.5, 22.0],
 									"text": "gen"
@@ -642,12 +630,13 @@
 							{
 								"box": {
 									"id": "obj-45",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [361.5, 461.0, 51.0, 22.0],
-									"text": "zl.group"
+									"text": "list.group"
 								}
 							},
 							{
@@ -675,23 +664,25 @@
 							{
 								"box": {
 									"id": "obj-30",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [231.0, 602.604166805744171, 51.0, 22.0],
-									"text": "zl.group"
+									"text": "list.group"
 								}
 							},
 							{
 								"box": {
 									"id": "obj-28",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [286.5, 536.104166805744171, 47.0, 22.0],
-									"text": "zl.iter 1"
+									"text": "list.iter 1"
 								}
 							},
 							{
@@ -708,23 +699,25 @@
 							{
 								"box": {
 									"id": "obj-24",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [342.0, 536.104166805744171, 43.0, 22.0],
-									"text": "zl.sum"
+									"text": "list.sum"
 								}
 							},
 							{
 								"box": {
 									"id": "obj-5",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [231.0, 368.0, 38.0, 22.0],
-									"text": "zl.reg"
+									"text": "list.reg"
 								}
 							},
 							{
@@ -757,18 +750,19 @@
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [231.0, 635.854166805744171, 389.145857512950897, 22.0],
-									"text": "zl.join"
+									"text": "list.join"
 								}
 							},
 							{
 								"box": {
 									"id": "obj-13",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [601.145857512950897, 602.0, 51.0, 22.0],
-									"text": "zl.group"
+									"text": "list.group"
 								}
 							},
 							{
@@ -807,12 +801,13 @@
 							{
 								"box": {
 									"id": "obj-7",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [574.645857512950897, 294.0, 37.0, 22.0],
-									"text": "zl.len"
+									"text": "list.len"
 								}
 							},
 							{
@@ -879,7 +874,7 @@
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [94.0, 84.0, 156.0, 22.0],
-									"text": "zl.delace"
+									"text": "list.delace"
 								}
 							},
 							{
@@ -1158,12 +1153,9 @@
 								}
 							}
 						],
-						"originid": "pat-354"
+						"originid": "pat-20"
 					},
 					"patching_rect": [1417.0, 704.0, 128.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p modes to resonators"
 				}
 			},
@@ -1186,8 +1178,7 @@
 					"numoutlets": 1,
 					"outlettype": ["int"],
 					"parameter_enable": 0,
-					"patching_rect": [181.0, 667.0, 24.0, 24.0],
-					"svg": ""
+					"patching_rect": [181.0, 667.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -1213,7 +1204,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -1329,12 +1320,9 @@
 								}
 							}
 						],
-						"originid": "pat-374"
+						"originid": "pat-40"
 					},
 					"patching_rect": [21.0, 629.0, 103.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p load audio units"
 				}
 			},
@@ -1363,7 +1351,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -1401,7 +1389,7 @@
 											"appversion": {
 												"major": 9,
 												"minor": 0,
-												"revision": 4,
+												"revision": 5,
 												"architecture": "x64",
 												"modernui": 1
 											},
@@ -1414,10 +1402,10 @@
 														"maxclass": "newobj",
 														"text": "in 1",
 														"patching_rect": [50.0, 14.0, 28.0, 22.0],
-														"numinlets": 0,
 														"numoutlets": 1,
 														"outlettype": [""],
-														"id": "obj-1"
+														"id": "obj-1",
+														"numinlets": 0
 													}
 												},
 												{
@@ -1425,10 +1413,10 @@
 														"maxclass": "newobj",
 														"text": "pow 2",
 														"patching_rect": [50.0, 45.0, 41.0, 22.0],
-														"numinlets": 1,
 														"numoutlets": 1,
 														"outlettype": [""],
-														"id": "obj-3"
+														"id": "obj-3",
+														"numinlets": 1
 													}
 												},
 												{
@@ -1436,9 +1424,9 @@
 														"maxclass": "newobj",
 														"text": "out 1",
 														"patching_rect": [50.0, 75.0, 35.0, 22.0],
-														"numinlets": 1,
 														"numoutlets": 0,
-														"id": "obj-4"
+														"id": "obj-4",
+														"numinlets": 1
 													}
 												}
 											],
@@ -1456,7 +1444,7 @@
 													}
 												}
 											],
-											"originid": "pat-394"
+											"originid": "pat-60"
 										}
 									},
 									"id": "obj-53",
@@ -1466,7 +1454,7 @@
 									"outlettype": ["multichannelsignal"],
 									"patching_rect": [42.0, 196.735283826725635, 55.0, 22.0],
 									"text": "mc.gen~",
-									"wrapper_uniquekey": "u686002991"
+									"wrapper_uniquekey": "u365000662"
 								}
 							},
 							{
@@ -1596,12 +1584,9 @@
 								}
 							}
 						],
-						"originid": "pat-376"
+						"originid": "pat-42"
 					},
 					"patching_rect": [1021.0, 704.0, 172.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p enevelope generator"
 				}
 			},
@@ -1732,12 +1717,12 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [-1886.0, -118.0, 1852.0, 984.0],
+						"rect": [184.0, 215.0, 1147.0, 575.0],
 						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
@@ -1759,8 +1744,8 @@
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [176.0, 195.416666666666856, 38.0, 22.0],
-									"text": "zl reg"
+									"patching_rect": [176.0, 195.416666666666856, 44.0, 22.0],
+									"text": "list.reg"
 								}
 							},
 							{
@@ -1871,7 +1856,7 @@
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [176.0, 300.66666666666697, 229.5, 22.0],
-									"text": "zl.join"
+									"text": "list.join"
 								}
 							},
 							{
@@ -1881,8 +1866,8 @@
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [386.5, 265.583333333333599, 51.0, 22.0],
-									"text": "zl.group"
+									"patching_rect": [386.5, 265.583333333333599, 57.0, 22.0],
+									"text": "list.group"
 								}
 							},
 							{
@@ -1914,8 +1899,8 @@
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [386.5, 125.250000000000114, 37.0, 22.0],
-									"text": "zl.len"
+									"patching_rect": [386.5, 125.250000000000114, 43.0, 22.0],
+									"text": "list.len"
 								}
 							},
 							{
@@ -1959,7 +1944,7 @@
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [40.0, 58.0, 155.0, 22.0],
-									"text": "zl.delace"
+									"text": "list.delace"
 								}
 							},
 							{
@@ -2154,12 +2139,9 @@
 								}
 							}
 						],
-						"originid": "pat-396"
+						"originid": "pat-62"
 					},
 					"patching_rect": [735.0, 704.0, 125.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p modes to oscillators"
 				}
 			},
@@ -2196,7 +2178,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -2218,12 +2200,13 @@
 							{
 								"box": {
 									"id": "obj-19",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [66.25, 172.103519668737022, 51.0, 22.0],
-									"text": "zl group"
+									"text": "list.group"
 								}
 							},
 							{
@@ -2334,12 +2317,9 @@
 								}
 							}
 						],
-						"originid": "pat-398"
+						"originid": "pat-64"
 					},
 					"patching_rect": [916.0, 146.0, 77.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p getMode N"
 				}
 			},
@@ -2353,7 +2333,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [916.0, 113.0, 50.0, 22.0]
+					"patching_rect": [916.0, 112.0, 50.0, 22.0]
 				}
 			},
 			{
@@ -2651,7 +2631,7 @@
 				}
 			}
 		],
-		"originid": "pat-350",
+		"originid": "pat-16",
 		"parameters": {
 			"obj-22::obj-34": ["vst~[5]", "vst~[1]", 0],
 			"parameterbanks": {
@@ -2665,13 +2645,6 @@
 		},
 		"dependency_cache": [
 			{
-				"name": ".maxsnap",
-				"bootpath": "~/Desktop/drum-modal-feedback/data",
-				"patcherrelativepath": "../data",
-				"type": "mx@s",
-				"implicit": 1
-			},
-			{
 				"name": "analyser.maxpat",
 				"bootpath": "~/Desktop/drum-modal-feedback/patchers/bpatchers",
 				"patcherrelativepath": "./bpatchers",
@@ -2684,10 +2657,6 @@
 				"patcherrelativepath": "../code/dist",
 				"type": "TEXT",
 				"implicit": 1
-			},
-			{
-				"name": "fluid.ampfeature~.mxo",
-				"type": "iLaX"
 			},
 			{
 				"name": "irmeasure~.mxo",

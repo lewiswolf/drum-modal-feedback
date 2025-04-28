@@ -4,7 +4,7 @@
 		"appversion": {
 			"major": 9,
 			"minor": 0,
-			"revision": 4,
+			"revision": 5,
 			"architecture": "x64",
 			"modernui": 1
 		},
@@ -113,7 +113,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -204,12 +204,9 @@
 								}
 							}
 						],
-						"originid": "pat-320"
+						"originid": "pat-120"
 					},
 					"patching_rect": [534.166666666666629, 117.0, 84.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p exportJSON"
 				}
 			},
@@ -236,7 +233,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -327,12 +324,9 @@
 								}
 							}
 						],
-						"originid": "pat-322"
+						"originid": "pat-122"
 					},
 					"patching_rect": [443.333333333333314, 117.0, 84.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p importJSON"
 				}
 			},
@@ -455,6 +449,8 @@
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
+						"node_bin_path": "",
+						"npm_bin_path": "",
 						"watch": 1
 					},
 					"text": "node.script drum-modal-feedback.js @autostart 1 @watch 1",
@@ -553,7 +549,7 @@
 				}
 			}
 		],
-		"originid": "pat-318",
+		"originid": "pat-118",
 		"dependency_cache": [
 			{
 				"name": "drum-modal-feedback.js",

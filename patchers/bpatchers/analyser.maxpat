@@ -4,7 +4,7 @@
 		"appversion": {
 			"major": 9,
 			"minor": 0,
-			"revision": 4,
+			"revision": 5,
 			"architecture": "x64",
 			"modernui": 1
 		},
@@ -48,7 +48,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -165,12 +165,9 @@
 								}
 							}
 						],
-						"originid": "pat-84"
+						"originid": "pat-100"
 					},
 					"patching_rect": [864.0, 174.0, 104.0, 35.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p command synchronisation"
 				}
 			},
@@ -287,7 +284,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-47",
-					"index": 2,
+					"index": 0,
 					"maxclass": "inlet",
 					"numinlets": 0,
 					"numoutlets": 1,
@@ -317,7 +314,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -479,12 +476,9 @@
 								}
 							}
 						],
-						"originid": "pat-86"
+						"originid": "pat-102"
 					},
 					"patching_rect": [190.0, 424.0, 77.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p export json"
 				}
 			},
@@ -500,7 +494,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -788,12 +782,13 @@
 							{
 								"box": {
 									"id": "obj-117",
+									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
 									"patching_rect": [518.0, 846.0, 37.0, 22.0],
-									"text": "zl rev"
+									"text": "list.rev"
 								}
 							},
 							{
@@ -1260,12 +1255,9 @@
 								}
 							}
 						],
-						"originid": "pat-88"
+						"originid": "pat-104"
 					},
 					"patching_rect": [477.0, 218.0, 259.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p record ESS"
 				}
 			},
@@ -1304,7 +1296,7 @@
 						"appversion": {
 							"major": 9,
 							"minor": 0,
-							"revision": 4,
+							"revision": 5,
 							"architecture": "x64",
 							"modernui": 1
 						},
@@ -1646,12 +1638,9 @@
 								}
 							}
 						],
-						"originid": "pat-90"
+						"originid": "pat-106"
 					},
 					"patching_rect": [18.0, 424.0, 77.0, 22.0],
-					"saved_object_attributes": {
-						"globalpatchername": ""
-					},
 					"text": "p import json"
 				}
 			},
@@ -1716,8 +1705,6 @@
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
-						"node_bin_path": "",
-						"npm_bin_path": "",
 						"watch": 0
 					},
 					"text": "node.script drum-modal-feedback.js @autostart 1",
@@ -1733,7 +1720,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-12",
-					"index": 2,
+					"index": 0,
 					"maxclass": "outlet",
 					"numinlets": 1,
 					"numoutlets": 0,
@@ -1810,7 +1797,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-5",
-					"index": 1,
+					"index": 0,
 					"maxclass": "outlet",
 					"numinlets": 1,
 					"numoutlets": 0,
@@ -1841,7 +1828,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-88",
-					"index": 1,
+					"index": 0,
 					"maxclass": "inlet",
 					"numinlets": 0,
 					"numoutlets": 1,
@@ -2121,6 +2108,28 @@
 				}
 			}
 		],
-		"originid": "pat-82"
+		"originid": "pat-98",
+		"dependency_cache": [
+			{
+				"name": "drum-modal-feedback.js",
+				"bootpath": "~/Desktop/drum-modal-feedback/code/dist",
+				"patcherrelativepath": "../../code/dist",
+				"type": "TEXT",
+				"implicit": 1
+			},
+			{
+				"name": "irmeasure~.mxo",
+				"type": "iLaX"
+			},
+			{
+				"name": "irvalue~.mxo",
+				"type": "iLaX"
+			},
+			{
+				"name": "spectrumdraw~.mxo",
+				"type": "iLaX"
+			}
+		],
+		"autosave": 0
 	}
 }

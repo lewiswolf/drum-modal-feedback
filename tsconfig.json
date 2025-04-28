@@ -19,6 +19,7 @@
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
+		"useDefineForClassFields": true,
 		"useUnknownInCatchVariables": true,
 		// compiler config
 		"baseUrl": "./code/src",

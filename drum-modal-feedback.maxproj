@@ -2,7 +2,7 @@
 	"name": "drum-modal-feedback",
 	"version": 1,
 	"creationdate": 3781011549,
-	"modificationdate": 3788247513,
+	"modificationdate": 3828694276,
 	"viewrect": [150.0, 187.0, 1215.0, 603.0],
 	"autoorganize": 0,
 	"hideprojectwindow": 0,
@@ -21,30 +21,22 @@
 			},
 			"node-debug.maxpat": {
 				"kind": "patcher",
-				"local": 1,
-				"singleton": {
-					"bootpath": "~/Desktop/drum-modal-feedback/patchers",
-					"projectrelativepath": "./patchers"
-				}
+				"local": 1
 			}
 		},
 		"code": {},
 		"externals": {
 			"irmeasure~.mxo": {
-				"kind": "object",
-				"local": 1
+				"kind": "object"
 			},
 			"irvalue~.mxo": {
-				"kind": "object",
-				"local": 1
+				"kind": "object"
 			},
 			"spectrumdraw~.mxo": {
-				"kind": "object",
-				"local": 1
+				"kind": "object"
 			},
 			"fluid.ampfeature~.mxo": {
-				"kind": "object",
-				"local": 1
+				"kind": "object"
 			}
 		}
 	},
