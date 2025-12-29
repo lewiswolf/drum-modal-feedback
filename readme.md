@@ -51,3 +51,19 @@ npm run dev # npm run build with --watch flag
 npm run test # test the project with eslint
 npm run format # format the project
 ```
+
+## How to Cite
+
+```bibtex
+@inproceedings{wolstanholmeDrumModalFeedback2025,
+  title     = {Drum Modal Feedback: {{Concept}} Design of an Augmented Percussion Instrument},
+  booktitle = {25th {{International Conference}} on {{New Interfaces}} for {{Musical Expression}} ({{NIME}})},
+  author    = {Wolstanholme, Lewis and Shier, Jordie and Constanzo, Rodrigo and McPherson, Andrew},
+  year      = {2025},
+  month     = jun,
+  pages     = {108--115},
+  address   = {Canberra, Australia},
+  doi       = {10.5281/zenodo.15698805},
+  copyright = {All rights reserved}
+}
+```
