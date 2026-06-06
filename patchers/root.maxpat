@@ -9,7 +9,7 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [184.0, 215.0, 1147.0, 575.0],
+		"rect": [184.0, 215.0, 1525.0, 575.0],
 		"boxes": [
 			{
 				"box": {
@@ -175,7 +175,14 @@
 													"type": "AudioUnit",
 													"subtype": "AudioEffect",
 													"embed": 1,
-													"snapshot": {}
+													"snapshot": {},
+													"fileref": {
+														"name": "",
+														"filename": "_20260606.maxsnap",
+														"filepath": "~/Desktop/drum-modal-feedback/data",
+														"filepos": -1,
+														"snapshotfileid": "5e5680956c1f98d206029536bc095e20"
+													}
 												}
 											]
 										}
@@ -413,7 +420,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [184.0, 215.0, 1147.0, 575.0],
+						"rect": [184.0, 215.0, 1525.0, 575.0],
 						"boxes": [
 							{
 								"box": {
@@ -423,7 +430,7 @@
 									"numoutlets": 3,
 									"outlettype": ["bang", "signal", "signal"],
 									"patching_rect": [361.5, 232.0, 61.0, 22.0],
-									"text": "sp.onset~"
+									"text": "dk.onset~"
 								}
 							},
 							{
@@ -1341,7 +1348,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [184.0, 215.0, 1147.0, 575.0],
+						"rect": [184.0, 215.0, 1525.0, 575.0],
 						"boxes": [
 							{
 								"box": {
@@ -1351,7 +1358,7 @@
 									"numoutlets": 3,
 									"outlettype": ["bang", "signal", "signal"],
 									"patching_rect": [21.25, 62.0, 61.0, 22.0],
-									"text": "sp.onset~"
+									"text": "dk.onset~"
 								}
 							},
 							{
@@ -1385,10 +1392,10 @@
 														"maxclass": "newobj",
 														"text": "in 1",
 														"patching_rect": [50.0, 14.0, 28.0, 22.0],
+														"numinlets": 0,
 														"numoutlets": 1,
-														"outlettype": [""],
 														"id": "obj-1",
-														"numinlets": 0
+														"outlettype": [""]
 													}
 												},
 												{
@@ -1396,10 +1403,10 @@
 														"maxclass": "newobj",
 														"text": "pow 2",
 														"patching_rect": [50.0, 45.0, 41.0, 22.0],
+														"numinlets": 1,
 														"numoutlets": 1,
-														"outlettype": [""],
 														"id": "obj-3",
-														"numinlets": 1
+														"outlettype": [""]
 													}
 												},
 												{
@@ -1407,23 +1414,23 @@
 														"maxclass": "newobj",
 														"text": "out 1",
 														"patching_rect": [50.0, 75.0, 35.0, 22.0],
+														"numinlets": 1,
 														"numoutlets": 0,
-														"id": "obj-4",
-														"numinlets": 1
+														"id": "obj-4"
 													}
 												}
 											],
 											"lines": [
 												{
 													"patchline": {
-														"source": ["obj-1", 0],
-														"destination": ["obj-3", 0]
+														"source": ["obj-3", 0],
+														"destination": ["obj-4", 0]
 													}
 												},
 												{
 													"patchline": {
-														"source": ["obj-3", 0],
-														"destination": ["obj-4", 0]
+														"source": ["obj-1", 0],
+														"destination": ["obj-3", 0]
 													}
 												}
 											]
@@ -1436,7 +1443,7 @@
 									"outlettype": ["multichannelsignal"],
 									"patching_rect": [42.0, 196.73528382672563, 55.0, 22.0],
 									"text": "mc.gen~",
-									"wrapper_uniquekey": "u035000659"
+									"wrapper_uniquekey": "u727000620"
 								}
 							},
 							{

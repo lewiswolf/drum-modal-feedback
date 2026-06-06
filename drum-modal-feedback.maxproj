@@ -2,8 +2,8 @@
 	"name": "drum-modal-feedback",
 	"version": 1,
 	"creationdate": 3781011549,
-	"modificationdate": 3828694276,
-	"viewrect": [150.0, 187.0, 1215.0, 603.0],
+	"modificationdate": 3863597118,
+	"viewrect": [150.0, 215.0, 1593.0, 575.0],
 	"autoorganize": 0,
 	"hideprojectwindow": 0,
 	"showdependencies": 1,
@@ -22,9 +22,16 @@
 			"node-debug.maxpat": {
 				"kind": "patcher",
 				"local": 1
+			},
+			"dk.adstatussr.maxpat": {
+				"kind": "patcher"
+			},
+			"dk.onset~.maxpat": {
+				"kind": "patcher"
 			}
 		},
 		"code": {},
+		"data": {},
 		"externals": {
 			"irmeasure~.mxo": {
 				"kind": "object"
