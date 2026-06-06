@@ -14,7 +14,11 @@ let peaks_subset: SPL = [] // a second subset for applying frequency range limit
 
 maxmsp.addHandler(
 	'defineSubset',
-	(f_min: Readonly<number> = 0, f_max: Readonly<number> = Infinity, threshold = 0): void => {
+	(
+		f_min: Readonly<number> = 0,
+		f_max: Readonly<number> = Number.POSITIVE_INFINITY,
+		threshold: Readonly<number> = 0,
+	): void => {
 		/*
 		Create a subset of dominant modes for use when calling getMode. The first two arguments
 		set the frequency range for subset. The third argument sets the minimum distance in
@@ -27,19 +31,20 @@ maxmsp.addHandler(
 		*/
 
 		peaks_subset = []
-		if (f_min > 0 || f_max < Infinity || threshold > 0) {
-			threshold /= 1200
-			peaks.forEach((entry: SPL[0]): void => {
+		if (f_min > 0 || f_max < Number.POSITIVE_INFINITY || threshold > 0) {
+			const octave_threshold = threshold / 1200
+			for (const entry of peaks) {
 				if (
 					entry.frequency >= f_min &&
 					entry.frequency <= f_max &&
-					peaks_subset.every((entry_subset: Readonly<SPL[0]>): boolean => {
-						return Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > threshold
-					})
+					peaks_subset.every(
+						(entry_subset: Readonly<SPL[0]>): boolean =>
+							Math.abs(Math.log2(entry.frequency / entry_subset.frequency)) > octave_threshold,
+					)
 				) {
 					peaks_subset.push(entry)
 				}
-			})
+			}
 		}
 	},
 )
@@ -52,14 +57,13 @@ maxmsp.addHandler('getMode', (...N: readonly number[]): void => {
 	if (N.length > 64) {
 		void maxmsp.post('Only 64 modes can be queried at once.')
 	} else {
-		const getN = (P: Readonly<SPL>): number[] => {
-			return N.map((n: Readonly<number>): [number, number] => {
+		const getN = (P: Readonly<SPL>): number[] =>
+			N.flatMap((n: Readonly<number>): [number, number] => {
 				if (n >= P.length || n < 0) {
 					void maxmsp.post(`Mode number ${n.toString()} out of range.`)
 				}
 				return [P[n]?.frequency ?? 0, P[n]?.amplitude ?? 0]
-			}).flat()
-		}
+			})
 		// to save memory, we declare the function prior and call it using
 		// peaks_subset if it is populated, or peaks if it is not.
 		void maxmsp.outlet(getN(peaks_subset.length > 0 ? peaks_subset : peaks))
@@ -80,7 +84,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 
 	peaks = []
 	peaks_subset = []
-	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>) => {
+	SPL_current.forEach((entry: Readonly<SPL[0]>, i: Readonly<number>): void => {
 		if (i > 0 && i < SPL_current.length - 1) {
 			// typescript doesn't like complex for loops...
 			const prev_entry = SPL_current[i - 1] as NonNullable<SPL[0]>
@@ -116,7 +120,7 @@ maxmsp.addHandler('__exportJSON', (absolute_path: Readonly<string>): void => {
 	*/
 
 	fs.writeFileSync(
-		`${absolute_path}${path.extname(absolute_path) !== '.json' ? '.json' : ''}`,
+		`${absolute_path}${path.extname(absolute_path) === '.json' ? '' : '.json'}`,
 		JSON.stringify(SPL_current),
 	)
 	void maxmsp.outletBang()
@@ -128,12 +132,12 @@ maxmsp.addHandler('__importJSON', (absolute_path: Readonly<string>): void => {
 	*/
 
 	try {
-		const json = JSON.parse(fs.readFileSync(absolute_path, 'utf-8').toString()) as SPL
+		const json = JSON.parse(fs.readFileSync(absolute_path, 'utf-8')) as SPL
 		if (
-			!(json instanceof Array) ||
+			!Array.isArray(json) ||
 			json.every(
-				(entry: { amplitude: number | undefined; frequency: number | undefined } | undefined) =>
-					!(entry?.amplitude && entry.frequency),
+				(entry?: { frequency?: number; amplitude?: number }): boolean =>
+					!(entry?.frequency && entry.amplitude),
 			)
 		) {
 			throw new Error('Parsed JSON does not match expected format.')

@@ -3,14 +3,13 @@
 		"fileversion": 1,
 		"appversion": {
 			"major": 9,
-			"minor": 0,
-			"revision": 5,
+			"minor": 1,
+			"revision": 4,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
 		"rect": [184.0, 215.0, 1147.0, 575.0],
-		"gridsize": [15.0, 15.0],
 		"boxes": [
 			{
 				"box": {
@@ -112,14 +111,13 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [183.0, 215.0, 1221.0, 575.0],
-						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
 								"box": {
@@ -203,10 +201,9 @@
 									"source": ["obj-22", 0]
 								}
 							}
-						],
-						"originid": "pat-120"
+						]
 					},
-					"patching_rect": [534.166666666666629, 117.0, 84.0, 22.0],
+					"patching_rect": [534.1666666666666, 117.0, 84.0, 22.0],
 					"text": "p exportJSON"
 				}
 			},
@@ -218,7 +215,7 @@
 					"numoutlets": 1,
 					"outlettype": ["bang"],
 					"parameter_enable": 0,
-					"patching_rect": [534.166666666666629, 89.0, 24.0, 24.0]
+					"patching_rect": [534.1666666666666, 89.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -232,14 +229,13 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [183.0, 215.0, 1221.0, 575.0],
-						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
 								"box": {
@@ -323,10 +319,9 @@
 									"source": ["obj-22", 0]
 								}
 							}
-						],
-						"originid": "pat-122"
+						]
 					},
-					"patching_rect": [443.333333333333314, 117.0, 84.0, 22.0],
+					"patching_rect": [443.3333333333333, 117.0, 84.0, 22.0],
 					"text": "p importJSON"
 				}
 			},
@@ -338,7 +333,7 @@
 					"numoutlets": 1,
 					"outlettype": ["bang"],
 					"parameter_enable": 0,
-					"patching_rect": [443.333333333333314, 89.0, 24.0, 24.0]
+					"patching_rect": [443.3333333333333, 89.0, 24.0, 24.0]
 				}
 			},
 			{
@@ -361,7 +356,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [101.833333333333329, 63.0, 139.0, 76.0],
+					"patching_rect": [101.83333333333333, 63.0, 139.0, 76.0],
 					"text": "__importSweep 20. -40, __importSweep 25. -30, __importSweep 30. -40, __importSweep 35. -20, __importSweep 40. -40"
 				}
 			},
@@ -372,7 +367,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [30.0, 518.0, 68.0, 22.0]
+					"patching_rect": [30.0, 518.0, 68.0, 22.0],
+					"text": "25 -30"
 				}
 			},
 			{
@@ -403,7 +399,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [247.666666666666686, 117.0, 100.0, 22.0],
+					"patching_rect": [247.66666666666669, 117.0, 100.0, 22.0],
 					"text": "__analyseSweep"
 				}
 			},
@@ -449,8 +445,6 @@
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
-						"node_bin_path": "",
-						"npm_bin_path": "",
 						"watch": 1
 					},
 					"text": "node.script drum-modal-feedback.js @autostart 1 @watch 1",
@@ -547,34 +541,6 @@
 					"destination": ["obj-1", 0],
 					"source": ["obj-9", 0]
 				}
-			}
-		],
-		"originid": "pat-118",
-		"dependency_cache": [
-			{
-				"name": "drum-modal-feedback.js",
-				"bootpath": "~/Desktop/drum-modal-feedback/code/dist",
-				"patcherrelativepath": "../code/dist",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "fit_jweb_to_bounds.js",
-				"bootpath": "C74:/packages/Node for Max/patchers/debug-monitor",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "n4m.monitor.maxpat",
-				"bootpath": "C74:/packages/Node for Max/patchers/debug-monitor",
-				"type": "JSON",
-				"implicit": 1
-			},
-			{
-				"name": "resize_n4m_monitor_patcher.js",
-				"bootpath": "C74:/packages/Node for Max/patchers/debug-monitor",
-				"type": "TEXT",
-				"implicit": 1
 			}
 		],
 		"autosave": 0

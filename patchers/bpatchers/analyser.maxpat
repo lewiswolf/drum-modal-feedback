@@ -3,15 +3,14 @@
 		"fileversion": 1,
 		"appversion": {
 			"major": 9,
-			"minor": 0,
-			"revision": 5,
+			"minor": 1,
+			"revision": 4,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
 		"rect": [184.0, 215.0, 1147.0, 575.0],
 		"openinpresentation": 1,
-		"gridsize": [15.0, 15.0],
 		"boxes": [
 			{
 				"box": {
@@ -47,14 +46,13 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [138.0, 215.0, 1221.0, 575.0],
-						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
 								"box": {
@@ -164,8 +162,7 @@
 									"source": ["obj-64", 0]
 								}
 							}
-						],
-						"originid": "pat-100"
+						]
 					},
 					"patching_rect": [864.0, 174.0, 104.0, 35.0],
 					"text": "p command synchronisation"
@@ -284,7 +281,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-47",
-					"index": 0,
+					"index": 2,
 					"maxclass": "inlet",
 					"numinlets": 0,
 					"numoutlets": 1,
@@ -313,14 +310,13 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [149.0, 142.0, 978.0, 672.0],
-						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
 								"box": {
@@ -475,8 +471,7 @@
 									"source": ["obj-30", 0]
 								}
 							}
-						],
-						"originid": "pat-102"
+						]
 					},
 					"patching_rect": [190.0, 424.0, 77.0, 22.0],
 					"text": "p export json"
@@ -493,14 +488,14 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [149.0, 142.0, 978.0, 672.0],
-						"gridsize": [15.0, 15.0],
+						"rect": [184.0, 215.0, 1147.0, 575.0],
+						"visible": 1,
 						"boxes": [
 							{
 								"box": {
@@ -520,7 +515,7 @@
 									"numinlets": 2,
 									"numoutlets": 1,
 									"outlettype": ["float"],
-									"patching_rect": [518.0, 618.049927000000025, 29.5, 22.0],
+									"patching_rect": [518.0, 618.049927, 29.5, 22.0],
 									"text": "f 1."
 								}
 							},
@@ -686,7 +681,7 @@
 									"numinlets": 1,
 									"numoutlets": 1,
 									"outlettype": [""],
-									"patching_rect": [159.5, 369.599853999999993, 96.0, 22.0],
+									"patching_rect": [159.5, 369.599854, 96.0, 22.0],
 									"text": "prepend loadbar"
 								}
 							},
@@ -782,12 +777,11 @@
 							{
 								"box": {
 									"id": "obj-117",
-									"linecount": 2,
 									"maxclass": "newobj",
 									"numinlets": 2,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [518.0, 846.0, 37.0, 22.0],
+									"patching_rect": [518.0, 846.0, 43.0, 22.0],
 									"text": "list.rev"
 								}
 							},
@@ -831,7 +825,7 @@
 									"numinlets": 2,
 									"numoutlets": 1,
 									"outlettype": [""],
-									"patching_rect": [518.0, 649.09985400000005, 164.0, 22.0],
+									"patching_rect": [518.0, 649.099854, 164.0, 22.0],
 									"text": "expr ((($f2 / 2) - 20) / $f1) + 1"
 								}
 							},
@@ -888,7 +882,7 @@
 									"numinlets": 2,
 									"numoutlets": 1,
 									"outlettype": [""],
-									"patching_rect": [269.0, 369.599853999999993, 105.0, 23.0],
+									"patching_rect": [269.0, 369.599854, 105.0, 23.0],
 									"text": "set #0ESS-IIR"
 								}
 							},
@@ -996,7 +990,7 @@
 							{
 								"patchline": {
 									"destination": ["obj-83", 0],
-									"midpoints": [1278.5, 773.549927000000025, 527.5, 773.549927000000025],
+									"midpoints": [1278.5, 773.549927, 527.5, 773.549927],
 									"source": ["obj-11", 5]
 								}
 							},
@@ -1039,7 +1033,7 @@
 							{
 								"patchline": {
 									"destination": ["obj-10", 0],
-									"midpoints": [662.0, 613.024963500000013, 527.5, 613.024963500000013],
+									"midpoints": [662.0, 613.0249635, 527.5, 613.0249635],
 									"source": ["obj-12", 0]
 								}
 							},
@@ -1254,8 +1248,7 @@
 									"source": ["obj-92", 0]
 								}
 							}
-						],
-						"originid": "pat-104"
+						]
 					},
 					"patching_rect": [477.0, 218.0, 259.0, 22.0],
 					"text": "p record ESS"
@@ -1295,14 +1288,13 @@
 						"fileversion": 1,
 						"appversion": {
 							"major": 9,
-							"minor": 0,
-							"revision": 5,
+							"minor": 1,
+							"revision": 4,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [149.0, 142.0, 978.0, 672.0],
-						"gridsize": [15.0, 15.0],
 						"boxes": [
 							{
 								"box": {
@@ -1337,6 +1329,9 @@
 									"numoutlets": 5,
 									"outlettype": ["", "", "", "", ""],
 									"patching_rect": [396.0, 293.0, 103.0, 49.0],
+									"saved_object_attributes": {
+										"legacyoutputorder": 1
+									},
 									"text": "regexp .json @substitute .wav @tosymbol 1"
 								}
 							},
@@ -1425,7 +1420,7 @@
 									"maxclass": "newobj",
 									"numinlets": 1,
 									"numoutlets": 0,
-									"patching_rect": [64.5, 186.818181818181813, 61.0, 22.0],
+									"patching_rect": [64.5, 186.8181818181818, 61.0, 22.0],
 									"text": "s #0gui"
 								}
 							},
@@ -1482,7 +1477,7 @@
 									"numinlets": 2,
 									"numoutlets": 1,
 									"outlettype": [""],
-									"patching_rect": [64.5, 139.363636363636374, 214.0, 35.0],
+									"patching_rect": [64.5, 139.36363636363637, 214.0, 35.0],
 									"text": "state text \"Importing SPL from JSON\", state 0"
 								}
 							},
@@ -1493,7 +1488,7 @@
 									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": ["", "bang"],
-									"patching_rect": [38.0, 104.909090909090907, 45.5, 22.0],
+									"patching_rect": [38.0, 104.9090909090909, 45.5, 22.0],
 									"text": "t l b"
 								}
 							},
@@ -1504,7 +1499,7 @@
 									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": ["", "bang"],
-									"patching_rect": [38.0, 70.454545454545453, 103.0, 22.0],
+									"patching_rect": [38.0, 70.45454545454545, 103.0, 22.0],
 									"text": "opendialog JSON"
 								}
 							},
@@ -1637,8 +1632,7 @@
 									"source": ["obj-8", 1]
 								}
 							}
-						],
-						"originid": "pat-106"
+						]
 					},
 					"patching_rect": [18.0, 424.0, 77.0, 22.0],
 					"text": "p import json"
@@ -1689,7 +1683,7 @@
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 6,
-					"outlettype": ["signal", "bang", "int", "float", "", "list"],
+					"outlettype": ["signal", "bang", "int", "float", "", ""],
 					"patching_rect": [864.0, 251.0, 71.5, 22.0],
 					"text": "typeroute~"
 				}
@@ -1705,6 +1699,8 @@
 					"saved_object_attributes": {
 						"autostart": 1,
 						"defer": 0,
+						"node_bin_path": "",
+						"npm_bin_path": "",
 						"watch": 0
 					},
 					"text": "node.script drum-modal-feedback.js @autostart 1",
@@ -1720,7 +1716,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-12",
-					"index": 0,
+					"index": 2,
 					"maxclass": "outlet",
 					"numinlets": 1,
 					"numoutlets": 0,
@@ -1797,7 +1793,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-5",
-					"index": 0,
+					"index": 1,
 					"maxclass": "outlet",
 					"numinlets": 1,
 					"numoutlets": 0,
@@ -1828,7 +1824,7 @@
 				"box": {
 					"comment": "",
 					"id": "obj-88",
-					"index": 0,
+					"index": 1,
 					"maxclass": "inlet",
 					"numinlets": 0,
 					"numoutlets": 1,
@@ -2107,29 +2103,6 @@
 					"source": ["obj-94", 1]
 				}
 			}
-		],
-		"originid": "pat-98",
-		"dependency_cache": [
-			{
-				"name": "drum-modal-feedback.js",
-				"bootpath": "~/Desktop/drum-modal-feedback/code/dist",
-				"patcherrelativepath": "../../code/dist",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "irmeasure~.mxo",
-				"type": "iLaX"
-			},
-			{
-				"name": "irvalue~.mxo",
-				"type": "iLaX"
-			},
-			{
-				"name": "spectrumdraw~.mxo",
-				"type": "iLaX"
-			}
-		],
-		"autosave": 0
+		]
 	}
 }

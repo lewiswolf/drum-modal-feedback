@@ -1,9 +1,12 @@
 {
 	"compilerOptions": {
 		// type checking
+		"allowArbitraryExtensions": false,
+		"allowUmdGlobalAccess": false,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
+		"erasableSyntaxOnly": true,
 		"exactOptionalPropertyTypes": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": true,
@@ -12,24 +15,27 @@
 		"noImplicitThis": true,
 		"noPropertyAccessFromIndexSignature": true,
 		"noUncheckedIndexedAccess": true,
+		"noUncheckedSideEffectImports": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"strict": true,
 		"strictBindCallApply": true,
+		"strictBuiltinIteratorReturn": true,
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
 		"useDefineForClassFields": true,
 		"useUnknownInCatchVariables": true,
 		// compiler config
-		"baseUrl": "./code/src",
 		"lib": ["ESNext"],
 		"esModuleInterop": true,
 		"module": "CommonJS",
+		"rootDir": "./code/src",
 		"outDir": "./code/dist",
 		"removeComments": true,
 		"sourceMap": false,
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": ["node"]
 	},
 	"include": ["code/src"]
 }
