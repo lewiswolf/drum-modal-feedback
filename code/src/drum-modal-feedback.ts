@@ -76,7 +76,7 @@ maxmsp.addHandler('getMode', (...N: readonly number[]): void => {
 
 maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void => {
 	/*
-	Detect the dominant modes in an SPL test using the ___ algorithm.
+	Detect the dominant modes in an SPL test using the quadratic interpolation algorithm.
 		See: https://ccrma.stanford.edu/~jos/sasp/Peak_Detection_Steps_3.html
 	params:
 		threshold	minimum peak amplitude (dB)
@@ -95,7 +95,7 @@ maxmsp.addHandler('__analyseSweep', (threshold: Readonly<number> = -40): void =>
 				entry.amplitude > next_entry.amplitude &&
 				(threshold === 0 || entry.amplitude > threshold)
 			) {
-				// Perform parabolic interpolation to better approximate the peak
+				// Perform quadratic interpolation to better approximate the peak
 				// First calculate the frequency bin of the peak (-1.0 to 1.0)
 				const bin =
 					(0.5 * (prev_entry.amplitude - next_entry.amplitude)) /
